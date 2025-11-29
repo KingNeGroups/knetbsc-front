@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useAccount, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
 import { useAppKit } from "@reown/appkit/react";
 import { toast } from "sonner";
-import { Wallet, ArrowRight, Copy, CopyCheck, ExternalLink, Twitter, BookOpen, Globe, ChevronLeft, ChevronRight } from "lucide-react";
+import { Wallet, ArrowRight, Copy, CopyCheck, ExternalLink, Twitter, BookOpen, Globe } from "lucide-react";
 import { parseUnits } from "viem";
 import { bsc } from "@reown/appkit/networks";
 import { useAllBalances, KNET_TOKEN_ADDRESS, ERC20_ABI } from "@/hooks/use-token-balance";
@@ -14,10 +14,6 @@ import { Partners } from "./Partners";
 import img1 from "@/assets/img/floa/1.png";
 import img2 from "@/assets/img/floa/2.jpg";
 import img3 from "@/assets/img/floa/3.png";
-import about1 from "@/assets/img/floa/about1.jpg";
-import about2 from "@/assets/img/floa/about2.jpg";
-import about3 from "@/assets/img/floa/about3.jpg";
-import about4 from "@/assets/img/floa/about4.jpg";
 
 const RECEIVING_ADDRESS = "0xf0B47977fD55C9c329433064A3f85707119e95Dc" as const;
 
@@ -26,14 +22,6 @@ export function FloaIdoFusion() {
   const [hasNotified, setHasNotified] = useState(false);
   const [copiedTokenContract, setCopiedTokenContract] = useState(false);
   const [copiedReceivingAddress, setCopiedReceivingAddress] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const carouselImages = [
-    { src: about1, title: "AI Training", description: "Advanced AI training capabilities" },
-    { src: about2, title: "Smart Agents", description: "Intelligent agent ecosystem" },
-    { src: about3, title: "Ecosystem", description: "Comprehensive platform integration" },
-    { src: about4, title: "Innovation", description: "Cutting-edge technology solutions" }
-  ];
 
   const { address, isConnected } = useAccount();
   const { open } = useAppKit();
@@ -118,23 +106,6 @@ export function FloaIdoFusion() {
     }
   };
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
-  };
-
-  // Auto-play carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
-    }, 4000); // Change slide every 4 seconds
-
-    return () => clearInterval(interval);
-  }, [carouselImages.length]);
-
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Animated background patterns */}
@@ -209,59 +180,55 @@ export function FloaIdoFusion() {
                     </h3>
                   </div>
 
-                  {/* Carousel */}
-                  <div className="relative transform rotate-1">
-                    <div className="relative overflow-hidden rounded-3xl border border-purple-500/40 bg-black/30">
-                      {/* Main carousel image */}
-                      <div className="relative h-80 transition-all duration-700 ease-in-out">
-                        <img
-                          src={carouselImages[currentSlide].src}
-                          alt={carouselImages[currentSlide].title}
-                          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                        />
-
-                        {/* Overlay gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-
-                        {/* Content overlay */}
-                        {/* <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                          <div className="flex items-center justify-center gap-2 mb-2">
-                            <div className="w-2 h-2 bg-purple-300 rounded-full animate-pulse" />
-                            <h4 className="text-2xl font-bold text-center">{carouselImages[currentSlide].title}</h4>
-                            <div className="w-2 h-2 bg-purple-300 rounded-full animate-pulse" />
-                          </div>
-                          <p className="text-center text-gray-300">{carouselImages[currentSlide].description}</p>
-                        </div> */}
+                  {/* Asymmetric image grid */}
+                  <div className="grid grid-cols-3 gap-4 transform rotate-1">
+                    <div className="col-span-2 row-span-1 group relative overflow-hidden rounded-3xl border border-purple-500/40 bg-black/30 hover:scale-[1.03] transition-all duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <img
+                        src={img1}
+                        alt="AI Training"
+                        className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-purple-200 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
+                        <div className="flex items-center justify-center gap-2">
+                          <div className="w-2 h-2 bg-purple-300 rounded-full" />
+                          AI Training
+                          <div className="w-2 h-2 bg-purple-300 rounded-full" />
+                        </div>
                       </div>
+                    </div>
 
-                      {/* Navigation buttons */}
-                      {/* <button
-                        onClick={prevSlide}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 border border-white/20"
-                      >
-                        <ChevronLeft className="w-5 h-5" />
-                      </button>
+                    <div className="col-span-1 row-span-2 group relative overflow-hidden rounded-3xl border border-cyan-500/40 bg-black/30 hover:scale-[1.03] transition-all duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <img
+                        src={img2}
+                        alt="Smart Agents"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-cyan-200 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
+                        <div className="flex items-center justify-center gap-2">
+                          <div className="w-2 h-2 bg-cyan-300 rounded-full" />
+                          Smart
+                          <br />
+                          Agents
+                          <div className="w-2 h-2 bg-cyan-300 rounded-full" />
+                        </div>
+                      </div>
+                    </div>
 
-                      <button
-                        onClick={nextSlide}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 border border-white/20"
-                      >
-                        <ChevronRight className="w-5 h-5" />
-                      </button> */}
-
-                      {/* Dots indicator */}
-                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
-                        {carouselImages.map((_, index) => (
-                          <button
-                            key={index}
-                            onClick={() => setCurrentSlide(index)}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                              index === currentSlide
-                                ? 'bg-purple-400 w-8 shadow-[0_0_12px_rgba(139,92,246,0.8)]'
-                                : 'bg-white/40 hover:bg-white/60'
-                            }`}
-                          />
-                        ))}
+                    <div className="col-span-1 row-span-1 group relative overflow-hidden rounded-3xl border border-blue-500/40 bg-black/30 hover:scale-[1.03] transition-all duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <img
+                        src={img3}
+                        alt="Ecosystem"
+                        className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-blue-200 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
+                        <div className="flex items-center justify-center gap-2">
+                          <div className="w-2 h-2 bg-blue-300 rounded-full" />
+                          Ecosystem
+                          <div className="w-2 h-2 bg-blue-300 rounded-full" />
+                        </div>
                       </div>
                     </div>
                   </div>
