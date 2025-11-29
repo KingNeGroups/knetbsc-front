@@ -147,14 +147,14 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
           </p>
 
           {/* Enhanced ecosystem badge */}
-          <div className="mt-4 inline-flex items-center gap-3 px-5 py-2.5 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-full border border-blue-500/20 backdrop-blur-sm">
+          {/* <div className="mt-4 inline-flex items-center gap-3 px-5 py-2.5 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-full border border-blue-500/20 backdrop-blur-sm">
             <div className="flex -space-x-1">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
               <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: "0.3s" }} />
               <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" style={{ animationDelay: "0.6s" }} />
             </div>
             <span className="text-blue-300 font-medium text-sm uppercase tracking-wider">KNET Token Ecosystem</span>
-          </div>
+          </div> */}
 
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-3xl blur-2xl" />
@@ -163,7 +163,7 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
         </div>
 
         <div className="space-y-6">
-          {isConnected && (
+          {/* {isConnected && (
             <div className="grid grid-cols-2 gap-4 p-5 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-xl border border-blue-500/30 backdrop-blur-sm">
               <div className="relative">
                 <div className="absolute -top-1 -left-1 w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
@@ -180,7 +180,7 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
                 </p>
               </div>
             </div>
-          )}
+          )} */}
 
           <div className="space-y-3">
             <label className="text-sm text-gray-300 mb-3 block font-medium uppercase tracking-wider">Contribution Amount (KNET)</label>
