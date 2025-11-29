@@ -1,7 +1,17 @@
 import { useAppKit } from "@reown/appkit/react";
 import { useAccount, useDisconnect } from "wagmi";
 import { Button } from "@/components/ui/button";
-import { LogOut, ExternalLink } from "lucide-react";
+import { LogOut, ExternalLink, ChevronDown, Copy, Wallet, Coins } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuSeparator,
+  DropdownMenuLabel,
+} from "@/components/ui/dropdown-menu";
+import { toast } from "sonner";
+import { useAllBalances } from "@/hooks/use-token-balance";
 import logo from "@/assets/logo.png";
 
 interface FuturisticHeaderProps {
@@ -20,6 +30,9 @@ export const FuturisticHeader = ({
   const { open } = useAppKit();
   const { address: wagmiAddress, isConnected: wagmiConnected } = useAccount();
   const { disconnect } = useDisconnect();
+
+  // Use the custom hook to get all balances
+  const { formattedBnbBalance, formattedKnetBalance } = useAllBalances();
 
   // Use props if provided, otherwise use wagmi hooks
   const connected = isConnected ?? wagmiConnected;
@@ -44,6 +57,16 @@ export const FuturisticHeader = ({
   // Format address for display
   const formatAddress = (addr: string) => {
     return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
+  };
+
+  // Copy address to clipboard
+  const copyAddress = async (address: string) => {
+    try {
+      await navigator.clipboard.writeText(address);
+      toast.success("Address copied to clipboard");
+    } catch (err) {
+      toast.error("Failed to copy address");
+    }
   };
 
   return (
@@ -74,24 +97,79 @@ export const FuturisticHeader = ({
             </a>
 
             {connected ? (
-              <>
-                <div className="hidden md:flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-900/40 to-purple-900/40 rounded-xl border border-blue-500/30 backdrop-blur-sm">
-                  <div className="relative">
-                    <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-pulse" />
-                    <div className="absolute inset-0 w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-ping opacity-50" />
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <div className="hidden md:flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-900/40 to-purple-900/40 rounded-xl border border-blue-500/30 backdrop-blur-sm cursor-pointer hover:border-blue-400/50 transition-all duration-300">
+                    <div className="relative">
+                      <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-pulse" />
+                      <div className="absolute inset-0 w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-ping opacity-50" />
+                    </div>
+                    <span className="text-sm font-mono font-medium text-blue-300">{formatAddress(userAddress!)}</span>
+                    <ChevronDown className="w-4 h-4 text-blue-300" />
                   </div>
-                  <span className="text-sm font-mono font-medium text-blue-300">{formatAddress(userAddress!)}</span>
-                </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={handleDisconnect}
-                  className="border-red-500/30 text-red-400 hover:bg-red-900/20 hover:border-red-400/50 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-red-500/10 backdrop-blur-sm"
-                >
-                  <LogOut className="w-4 h-4 mr-2" />
-                  <span className="hidden sm:inline">Disconnect</span>
-                </Button>
-              </>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="bg-gray-900/95 backdrop-blur-xl border border-blue-500/20 min-w-[280px]">
+                  <DropdownMenuLabel className="text-blue-300 font-mono text-xs">
+                    Wallet Address
+                  </DropdownMenuLabel>
+                  <DropdownMenuItem
+                    onClick={() => copyAddress(userAddress!)}
+                    className="text-gray-300 hover:text-white hover:bg-blue-900/20 cursor-pointer py-3"
+                  >
+                    <Wallet className="w-4 h-4 mr-2 text-blue-400" />
+                    <div className="flex-1 font-mono text-sm">
+                      {userAddress}
+                    </div>
+                    <Copy className="w-4 h-4 text-gray-400 hover:text-white" />
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator className="bg-blue-500/20" />
+
+                  <DropdownMenuLabel className="text-blue-300 font-mono text-xs">
+                    Balances
+                  </DropdownMenuLabel>
+
+                  <DropdownMenuItem className="text-gray-300 hover:text-white hover:bg-blue-900/20 cursor-pointer py-3">
+                    <Coins className="w-4 h-4 mr-2 text-yellow-400" />
+                    <div className="flex-1">
+                      <div className="font-semibold">BNB</div>
+                      <div className="text-xs text-gray-400">Binance Smart Chain</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="font-mono text-sm">
+                        {formattedBnbBalance ? formattedBnbBalance.toFixed(4) : "0.0000"}
+                      </div>
+                    </div>
+                  </DropdownMenuItem>
+
+                  {formattedKnetBalance !== undefined && (
+                    <DropdownMenuItem className="text-gray-300 hover:text-white hover:bg-blue-900/20 cursor-pointer py-3">
+                      <Coins className="w-4 h-4 mr-2 text-purple-400" />
+                      <div className="flex-1">
+                        <div className="font-semibold">KNET</div>
+                        <div className="text-xs text-gray-400">Token</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="font-mono text-sm">
+                          {formattedKnetBalance.toLocaleString(undefined, {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 2
+                          })}
+                        </div>
+                      </div>
+                    </DropdownMenuItem>
+                  )}
+
+                  <DropdownMenuSeparator className="bg-blue-500/20" />
+
+                  <DropdownMenuItem
+                    onClick={handleDisconnect}
+                    className="text-red-400 hover:text-red-300 hover:bg-red-900/20 cursor-pointer"
+                  >
+                    <LogOut className="w-4 h-4 mr-2" />
+                    Disconnect
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             ) : (
               <Button
                 onClick={handleConnect}
