@@ -38,7 +38,7 @@ export function IdoStats() {
 
   const [progress, setProgress] = useState(0);
   const [knetData, setKnetData] = useState({
-    amount: 0,
+    amount: 11916033,
     price: 0,
     targetUsdt: 30000,
     loading: true
