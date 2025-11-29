@@ -2,14 +2,42 @@ import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { calculateKnetForTargetUsdt, formatNumber } from "@/lib/utils";
+import { useAccount, useReadContract } from "wagmi";
+import { parseUnits, formatUnits } from "viem";
+import { bsc } from "@reown/appkit/networks";
+
+const KNET_TOKEN_ADDRESS = "0x8b24bf9fe8bb1d4d9dea81eebc9fed6f0fc67a46";
+const RECEIVING_ADDRESS = "0xf0B47977fD55C9c329433064A3f85707119e95Dc";
+
+const ERC20_ABI = [
+  {
+    name: "balanceOf",
+    type: "function",
+    stateMutability: "view",
+    inputs: [{ name: "account", type: "address" }],
+    outputs: [{ type: "uint256" }],
+  },
+  {
+    name: "decimals",
+    type: "function",
+    stateMutability: "view",
+    inputs: [],
+    outputs: [{ type: "uint8" }],
+  },
+] as const;
 
 interface IdoStatsProps {
-  userContribution: string;
-  totalRaised: string;
+  // userContribution: string;
+  // totalRaised: string;
   targetAmount: string;
 }
 
-export function IdoStats({ userContribution, totalRaised, targetAmount }: IdoStatsProps) {
+export function IdoStats({ targetAmount }: IdoStatsProps) {
+  const { address } = useAccount();
+  const [userContribution, setUserContribution] = useState("0");
+  const [totalRaised, setTotalRaised] = useState("0");
+  const [decimals, setDecimals] = useState(18);
+
   const [progress, setProgress] = useState(0);
   const [knetData, setKnetData] = useState({
     amount: 0,
@@ -17,6 +45,50 @@ export function IdoStats({ userContribution, totalRaised, targetAmount }: IdoSta
     targetUsdt: 30000,
     loading: true
   });
+
+   // 读取 KNET decimals
+  const { data: knetDecimals } = useReadContract({
+    address: KNET_TOKEN_ADDRESS,
+    abi: ERC20_ABI,
+    functionName: "decimals",
+  });
+
+  // 读取收款地址余额 = Total Raised
+  const { data: totalKnet } = useReadContract({
+    address: KNET_TOKEN_ADDRESS,
+    abi: ERC20_ABI,
+    functionName: "balanceOf",
+    args: [RECEIVING_ADDRESS],
+    // watch: true,
+  });
+
+  // 读取用户贡献 = 当前钱包向收款地址的余额增量
+  const { data: userKnet } = useReadContract({
+    address: KNET_TOKEN_ADDRESS,
+    abi: ERC20_ABI,
+    functionName: "balanceOf",
+    args: address ? [address] : undefined,
+    // watch: true,
+  });
+
+  useEffect(() => {
+    if (knetDecimals) setDecimals(Number(knetDecimals));
+
+    if (totalKnet) {
+      const total = parseFloat(formatUnits(totalKnet as bigint, knetDecimals || 18));
+      setTotalRaised(total.toFixed(2));
+      const target = parseFloat(targetAmount);
+      const percentage = target > 0 ? (total / target) * 100 : 0;
+      setProgress(Math.min(percentage, 100));
+    }
+
+    if (userKnet && totalKnet) {
+      const userBalance = parseFloat(formatUnits(userKnet as bigint, knetDecimals || 18));
+      const totalBalance = parseFloat(formatUnits(totalKnet as bigint, knetDecimals || 18));
+      const contribution = userBalance > totalBalance ? totalBalance : userBalance; // 防止显示超过总额
+      setUserContribution(contribution.toFixed(2));
+    }
+  }, [knetDecimals, totalKnet, userKnet, targetAmount]);
 
   useEffect(() => {
     const raised = parseFloat(totalRaised);
