@@ -10,6 +10,7 @@ import { Wallet, ArrowRight, Copy, CopyCheck } from "lucide-react";
 import { parseUnits } from "viem";
 import { bsc } from "@reown/appkit/networks";
 import { useAllBalances, KNET_TOKEN_ADDRESS, ERC20_ABI } from "@/hooks/use-token-balance";
+import { IdoStats } from "./IdoStats";
 
 interface ContributeSectionProps {
   onContribute: (amount: string) => void;
@@ -153,6 +154,11 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
               <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" style={{ animationDelay: "0.6s" }} />
             </div>
             <span className="text-blue-300 font-medium text-sm uppercase tracking-wider">KNET Token Ecosystem</span>
+          </div>
+
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-3xl blur-2xl" />
+            <IdoStats/>
           </div>
         </div>
 

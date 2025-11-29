@@ -169,12 +169,12 @@ const Index = () => {
           </div>
 
           {/* Stats Section with enhanced design */}
-          <div className="relative">
+          {/* <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-3xl blur-2xl" />
             <IdoStats
               targetAmount={targetAmount}
             />
-          </div>
+          </div> */}
 
           {/* Revolutionary two column layout with enhanced design */}
           <div className="grid lg:grid-cols-2 gap-12 xl:gap-16">

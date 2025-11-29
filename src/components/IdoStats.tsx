@@ -26,16 +26,13 @@ const ERC20_ABI = [
   },
 ] as const;
 
-interface IdoStatsProps {
-  // userContribution: string;
-  // totalRaised: string;
-  targetAmount: string;
-}
 
-export function IdoStats({ targetAmount }: IdoStatsProps) {
+
+export function IdoStats() {
   const { address } = useAccount();
   const [userContribution, setUserContribution] = useState("0");
   const [totalRaised, setTotalRaised] = useState("0");
+  const [targetAmount, setTargetAmount] = useState(0);
   const [decimals, setDecimals] = useState(18);
 
   const [progress, setProgress] = useState(0);
@@ -77,7 +74,7 @@ export function IdoStats({ targetAmount }: IdoStatsProps) {
     if (totalKnet) {
       const total = parseFloat(formatUnits(totalKnet as bigint, knetDecimals || 18));
       setTotalRaised(total.toFixed(2));
-      const target = parseFloat(targetAmount);
+      const target = parseFloat(targetAmount.toString());
       const percentage = target > 0 ? (total / target) * 100 : 0;
       setProgress(Math.min(percentage, 100));
     }
@@ -92,7 +89,7 @@ export function IdoStats({ targetAmount }: IdoStatsProps) {
 
   useEffect(() => {
     const raised = parseFloat(totalRaised);
-    const target = parseFloat(targetAmount);
+    const target = parseFloat(targetAmount.toString());
     const percentage = (raised / target) * 100;
     setProgress(Math.min(percentage, 100));
   }, [totalRaised, targetAmount]);
@@ -108,6 +105,7 @@ export function IdoStats({ targetAmount }: IdoStatsProps) {
           targetUsdt: data.targetUsdt,
           loading: false
         });
+        setTargetAmount(data.knetAmount)
       } catch (error) {
         console.error('Failed to fetch KNET data:', error);
         setKnetData(prev => ({ ...prev, loading: false }));
@@ -123,8 +121,8 @@ export function IdoStats({ targetAmount }: IdoStatsProps) {
   }, []);
 
   return (
-    <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 animate-slide-in" style={{ animationDelay: "0.2s" }}>
-      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all group relative overflow-hidden">
+    <div className="grid gap-3 grid-cols-1 md:grid-cols-2  animate-slide-in" style={{ animationDelay: "0.2s" }}>
+      {/* <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all group relative overflow-hidden">
         <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-primary opacity-10 rounded-full blur-xl group-hover:opacity-20 transition-opacity" />
         <div className="relative z-10">
           <div className="text-muted-foreground text-xs uppercase tracking-wider mb-3 opacity-70">Your Contribution</div>
@@ -135,14 +133,15 @@ export function IdoStats({ targetAmount }: IdoStatsProps) {
             {userContribution && parseFloat(userContribution) > 0 ? "Active Contributor" : "Not Started"}
           </div>
         </div>
-      </Card>
+      </Card> */}
 
       <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all group relative overflow-hidden">
         <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-secondary opacity-10 rounded-full blur-xl group-hover:opacity-20 transition-opacity" />
         <div className="relative z-10">
           <div className="text-muted-foreground text-xs uppercase tracking-wider mb-3 opacity-70">Total Raised</div>
           <div className="text-3xl font-bold bg-gradient-secondary bg-clip-text text-transparent group-hover:scale-105 transition-transform">
-            {totalRaised} <span className="text-lg font-medium text-secondary/80">KNET</span>
+            {totalRaised}
+             {/* <span className="text-lg font-medium text-secondary/80">KNET</span> */}
           </div>
           <div className="mt-2 text-xs text-secondary/60">
             {totalRaised && parseFloat(totalRaised) > 0 ? `${progress.toFixed(1)}% Complete` : "Not Started"}
@@ -150,7 +149,7 @@ export function IdoStats({ targetAmount }: IdoStatsProps) {
         </div>
       </Card>
 
-      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all md:col-span-2 lg:col-span-2 relative overflow-hidden group">
+      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all  relative overflow-hidden group">
         <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-primary/10 rounded-full blur-xl group-hover:bg-gradient-primary/20 transition-all duration-500"></div>
 
         <div className="relative z-10">
@@ -172,7 +171,7 @@ export function IdoStats({ targetAmount }: IdoStatsProps) {
                 formatNumber(knetData.amount, 0)
               )}
             </div>
-            <span className="text-lg font-semibold text-primary/80">KNET</span>
+            {/* <span className="text-lg font-semibold text-primary/80">KNET</span> */}
           </div>
 
           <div className="flex items-center justify-between text-xs">
@@ -182,9 +181,9 @@ export function IdoStats({ targetAmount }: IdoStatsProps) {
                 ${knetData.price ? knetData.price.toFixed(8) : '0.00000000'}
               </span>
             </div>
-            <div className="px-2 py-1 bg-primary/10 rounded-full text-xs font-medium text-primary">
+            {/* <div className="px-2 py-1 bg-primary/10 rounded-full text-xs font-medium text-primary">
               Live Update
-            </div>
+            </div> */}
           </div>
 
           {/* {!knetData.loading && knetData.amount > 0 && (
@@ -203,7 +202,7 @@ export function IdoStats({ targetAmount }: IdoStatsProps) {
         </div>
       </Card>
 
-      <Card className="glass-card p-6 md:col-span-3 xl:col-span-4 border-primary/20">
+      <Card className="glass-card p-6 md:col-span-2 border-primary/20">
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
