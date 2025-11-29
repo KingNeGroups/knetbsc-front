@@ -235,11 +235,11 @@ export function IdoStats() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
             </div>
           </Progress>
-          {progress >= 100 && (
+          {/* {progress >= 100 && formatNumber(knetData.amount, 0) && (
             <div className="text-center text-sm font-medium text-primary animate-pulse">
               🎉 Fundraising Goal Completed!
             </div>
-          )}
+          )} */}
         </div>
       </Card>
        
