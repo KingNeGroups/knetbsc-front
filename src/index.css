@@ -5,6 +5,156 @@
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
+/* =========================
+   Aeonik Mono TRIAL
+   ========================= */
+@font-face {
+  font-family: 'Aeonik Mono';
+  src: url('/fonts/AeonikMonoTRIAL/AeonikMonoTRIAL-Air.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+
+@font-face {
+  font-family: 'Aeonik Mono';
+  src: url('/fonts/AeonikMonoTRIAL/AeonikMonoTRIAL-Thin.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+
+@font-face {
+  font-family: 'Aeonik Mono';
+  src: url('/fonts/AeonikMonoTRIAL/AeonikMonoTRIAL-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+
+@font-face {
+  font-family: 'Aeonik Mono';
+  src: url('/fonts/AeonikMonoTRIAL/AeonikMonoTRIAL-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+
+@font-face {
+  font-family: 'Aeonik Mono';
+  src: url('/fonts/AeonikMonoTRIAL/AeonikMonoTRIAL-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+
+@font-face {
+  font-family: 'Aeonik Mono';
+  src: url('/fonts/AeonikMonoTRIAL/AeonikMonoTRIAL-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+
+@font-face {
+  font-family: 'Aeonik Mono';
+  src: url('/fonts/AeonikMonoTRIAL/AeonikMonoTRIAL-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+
+@font-face {
+  font-family: 'Aeonik Mono';
+  src: url('/fonts/AeonikMonoTRIAL/AeonikMonoTRIAL-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+
+/* =========================
+   Aeonik Pro TRIAL
+   ========================= */
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('/fonts/AeonikPro-Trial/AeonikProTRIAL-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('/fonts/AeonikPro-Trial/AeonikProTRIAL-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('/fonts/AeonikPro-Trial/AeonikProTRIAL-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('/fonts/AeonikPro-Trial/AeonikProTRIAL-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('/fonts/AeonikPro-Trial/AeonikProTRIAL-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('/fonts/AeonikPro-Trial/AeonikProTRIAL-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 R*/
+}
+
+@font-face {
+  font-family: 'RU';
+  src: url('/fonts/Ru/Ru.woff2') format('woff2'),
+       url('/fonts/Ru/Ru.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 RU */
+}
+@font-face {
+  font-family: 'Konnect';
+  src: url('/fonts/Ru/KonnectThin.otf') format('woff2'),
+       url('/fonts/Ru/KonnectSemiBold.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;  /* 保证等待字体，而不是先用系统字体 */
+  /* font-display: swap; 先用系统字体，加载完切换 RU */
+}
+
 
 @layer base {
   :root {
@@ -57,6 +207,12 @@ All colors MUST be HSL.
     --glow-accent: 0 0 50px hsl(170 100% 45% / 0.35);
 
     --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+    /* Gaming Typography */
+    --font-gaming: 'Aeonik Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+    --font-sans: 'Aeonik Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'RU', 'SF Mono', Monaco, Inconsolata, "Roboto Mono", monospace;
+
   }
 }
 
@@ -74,6 +230,7 @@ All colors MUST be HSL.
       linear-gradient(135deg, hsl(var(--background) / 0.95), hsl(var(--background)));
     min-height: 100vh;
     position: relative;
+    font-family: var(--font-gaming);
   }
 
   @keyframes float {
