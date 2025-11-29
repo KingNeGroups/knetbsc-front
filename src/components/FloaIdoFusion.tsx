@@ -505,15 +505,15 @@ export function FloaIdoFusion() {
               <div className="relative">
                 <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-900/60 to-blue-900/60 rounded-full border border-purple-500/40 backdrop-blur-md text-purple-300 font-medium shadow-2xl transform -rotate-1 hover:rotate-0 transition-all duration-500">
                   <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
-                  <span className="uppercase tracking-[0.3em] font-bold">Ecosystem Partners</span>
+                  <span className="uppercase tracking-[0.3em] font-bold">Partners</span>
                   <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(59,130,246,0.8)]" />
                 </div>
 
-                <h2 className="mt-8 text-4xl lg:text-6xl font-bold">
+                {/* <h2 className="mt-8 text-4xl lg:text-6xl font-bold">
                   <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(139,92,246,0.4)]">
                     Web3 Alliance
                   </span>
-                </h2>
+                </h2> */}
 
                 <div className="flex items-center justify-center gap-8 mt-6">
                   <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full transform -rotate-2" />
@@ -525,9 +525,9 @@ export function FloaIdoFusion() {
                   <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transform rotate-1" />
                 </div>
 
-                <p className="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">
+                {/* <p className="mt-6 text-lg text-gray-400 max-w-3xl mx-auto">
                   Building decentralized intelligent ecosystem together with industry leaders
-                </p>
+                </p> */}
               </div>
             </div>
 
