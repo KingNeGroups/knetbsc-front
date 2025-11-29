@@ -126,7 +126,7 @@ export function FloaIdoFusion() {
               {/* Floating ecosystem badge */}
               <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-900/60 to-cyan-900/60 rounded-full border border-purple-500/40 backdrop-blur-md text-purple-300 font-medium shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-500">
                 <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
-                <span className="uppercase tracking-[0.3em] font-bold">FLOA</span>
+                <span className="uppercase tracking-[0.3em] font-bold">Floa</span>
                 <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(6,182,212,0.8)]" />
               </div>
 {/* 
@@ -138,7 +138,7 @@ export function FloaIdoFusion() {
 
               <h2 className="mt-4 text-3xl lg:text-4xl font-bold">
                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Donate KNET to receive FLOA
+                Donate $KNET to receive $FLOA
                 </span>
               </h2>
 
@@ -220,7 +220,7 @@ export function FloaIdoFusion() {
 
                     <div className="flex items-center justify-between">
                       <p className="text-gray-400">
-                        balance: <span className="text-blue-400 font-bold">{formattedKnetBalance.toFixed(2)} KNET</span>
+                        balance: <span className="text-blue-400 font-bold">{formattedKnetBalance.toFixed(2)} $KNET</span>
                       </p>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
@@ -300,7 +300,7 @@ export function FloaIdoFusion() {
                 <div className="space-y-6">
                   <div className="text-center">
                     <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                    About FLOA
+                    About Floa
                     </h3>
                   </div>
 
@@ -402,7 +402,7 @@ export function FloaIdoFusion() {
                   <div className="group relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/15 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="relative flex justify-between items-center p-4 bg-black/30 rounded-2xl border border-purple-500/30 backdrop-blur-sm">
-                      <span className="text-gray-400 font-medium">KNET:</span>
+                      <span className="text-gray-400 font-medium">$KNET:</span>
                       <div className="flex items-center gap-3">
                         <span className="text-purple-300 font-mono bg-black/50 px-3 py-2 rounded-xl">0x8b24...7a46</span>
                         <button
