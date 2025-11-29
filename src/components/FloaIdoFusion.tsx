@@ -180,21 +180,21 @@ export function FloaIdoFusion() {
                   <div className="text-center">
                     <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-900/50 to-purple-900/50 rounded-full border border-blue-500/40 backdrop-blur-md text-blue-300 font-medium shadow-lg">
                       <Wallet className="w-4 h-4" />
-                      <span className="uppercase tracking-[0.2em] font-semibold">Participate</span>
+                      <span className="uppercase tracking-[0.2em] font-semibold">Join</span>
                     </div>
                   </div>
 
                   <div className="space-y-4">
                     <label className="block text-sm font-medium text-gray-300 uppercase tracking-wider">
                       <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                        Contribution Amount
+                        Amount
                       </span>
                     </label>
 
                     <div className="relative">
                       <Input
                         type="number"
-                        placeholder="Enter KNET amount"
+                        placeholder="amount"
                         value={amount}
                         onChange={(e) => setAmount(e.target.value)}
                         className="bg-gradient-to-r from-blue-950/60 to-purple-950/60 border-blue-500/40 focus:border-blue-400 text-gray-200 placeholder-gray-500 transition-all duration-500 rounded-2xl h-16 text-base backdrop-blur-sm pr-28 shadow-inner"
@@ -220,11 +220,11 @@ export function FloaIdoFusion() {
 
                     <div className="flex items-center justify-between">
                       <p className="text-gray-400">
-                        Available: <span className="text-blue-400 font-bold">{formattedKnetBalance.toFixed(2)} KNET</span>
+                        balance: <span className="text-blue-400 font-bold">{formattedKnetBalance.toFixed(2)} KNET</span>
                       </p>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
-                        <span className="text-green-400 text-xs font-medium uppercase tracking-wider">Live</span>
+                        <span className="text-green-400 text-xs font-medium uppercase tracking-wider"></span>
                       </div>
                     </div>
                   </div>
@@ -300,7 +300,7 @@ export function FloaIdoFusion() {
                 <div className="space-y-6">
                   <div className="text-center">
                     <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                      Open Intelligent Agent Ecosystem
+                    About FLOA
                     </h3>
                   </div>
 

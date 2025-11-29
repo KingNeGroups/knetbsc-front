@@ -119,7 +119,7 @@ export function ProjectInfo() {
         <div className="relative z-10 space-y-8">
           <div className="text-center">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">
-              Open Intelligent Agent Ecosystem
+              About FLOA
             </h3>
           </div>
 

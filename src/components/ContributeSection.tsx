@@ -173,7 +173,7 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
                 <div className="relative">
                   <Input
                     type="number"
-                    placeholder="Enter KNET amount"
+                    placeholder="amount"
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
                     className="bg-gradient-to-r from-blue-950/50 to-purple-950/50 border-blue-500/30 focus:border-blue-400 text-gray-200 placeholder-gray-500 transition-all duration-300 rounded-xl h-14 text-base backdrop-blur-sm pr-24 shadow-inner"
@@ -199,11 +199,11 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
 
                 <div className="mt-4 flex items-center justify-between">
                   <p className="text-gray-500 text-sm">
-                    Available: <span className="text-blue-400 font-bold">{formattedKnetBalance.toFixed(2)} KNET</span>
+                    balance: <span className="text-blue-400 font-bold">{formattedKnetBalance.toFixed(2)} KNET</span>
                   </p>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_6px_rgba(74,222,128,0.6)]" />
-                    <span className="text-green-400 text-xs font-medium uppercase tracking-wider">Live</span>
+                    <span className="text-green-400 text-xs font-medium uppercase tracking-wider"></span>
                   </div>
                 </div>
               </div>

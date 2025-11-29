@@ -138,7 +138,7 @@ export function IdoStats() {
       <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all group relative overflow-hidden">
         <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-secondary opacity-10 rounded-full blur-xl group-hover:opacity-20 transition-opacity" />
         <div className="relative z-10">
-          <div className="text-muted-foreground text-xs uppercase tracking-wider mb-3 opacity-70">Total Raised</div>
+          <div className="text-muted-foreground text-xs uppercase tracking-wider mb-3 opacity-70">Total</div>
           <div className="text-3xl font-bold bg-gradient-secondary bg-clip-text text-transparent group-hover:scale-105 transition-transform">
             {totalRaised}
              {/* <span className="text-lg font-medium text-secondary/80">KNET</span> */}
@@ -208,7 +208,7 @@ export function IdoStats() {
             <div className="flex items-center gap-2">
               {/* <span className="text-muted-foreground">Fundraising Progress</span> */}
               <div className="px-2 py-1 bg-primary/10 rounded-full text-xs font-medium text-primary">
-                Live Update
+              Percentage
               </div>
             </div>
             <div className="flex items-center gap-3">
