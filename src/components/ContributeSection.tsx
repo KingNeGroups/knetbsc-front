@@ -1,22 +1,102 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useAccount } from "wagmi";
+import { useAccount, useBalance, useReadContract, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
 import { useAppKit } from "@reown/appkit/react";
 import { toast } from "sonner";
 import { Wallet, ArrowRight } from "lucide-react";
+import { parseUnits, formatUnits } from "viem";
+import { bsc } from "@reown/appkit/networks";
 
 interface ContributeSectionProps {
   onContribute: (amount: string) => void;
 }
 
+const KNET_TOKEN_ADDRESS = "0x8b24bf9fe8bb1d4d9dea81eebc9fed6f0fc67a46" as const;
+const RECEIVING_ADDRESS = "0xf0B47977fD55C9c329433064A3f85707119e95Dc" as const;
+
+const ERC20_ABI = [
+  {
+    name: "balanceOf",
+    type: "function",
+    stateMutability: "view",
+    inputs: [{ name: "account", type: "address" }],
+    outputs: [{ type: "uint256" }],
+  },
+  {
+    name: "decimals",
+    type: "function",
+    stateMutability: "view",
+    inputs: [],
+    outputs: [{ type: "uint8" }],
+  },
+  {
+    name: "transfer",
+    type: "function",
+    stateMutability: "nonpayable",
+    inputs: [
+      { name: "to", type: "address" },
+      { name: "amount", type: "uint256" },
+    ],
+    outputs: [{ type: "bool" }],
+  },
+] as const;
+
 export function ContributeSection({ onContribute }: ContributeSectionProps) {
   const [amount, setAmount] = useState("");
-  const { isConnected } = useAccount();
+  const [hasNotified, setHasNotified] = useState(false);
+  const { address, isConnected } = useAccount();
   const { open } = useAppKit();
 
-  const handleContribute = () => {
+  // Get BNB balance
+  const { data: bnbBalance } = useBalance({
+    address: address,
+  });
+
+  // Get KNET balance
+  const { data: knetBalance } = useReadContract({
+    address: KNET_TOKEN_ADDRESS,
+    abi: ERC20_ABI,
+    functionName: "balanceOf",
+    args: address ? [address] : undefined,
+  });
+
+  // Get KNET decimals
+  const { data: knetDecimals } = useReadContract({
+    address: KNET_TOKEN_ADDRESS,
+    abi: ERC20_ABI,
+    functionName: "decimals",
+  });
+
+  // Write contract for KNET transfer
+  const { writeContract, data: hash, isPending } = useWriteContract();
+
+  // Wait for transaction confirmation
+  const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({
+    hash,
+  });
+
+  // Handle transaction success
+  useEffect(() => {
+    if (isSuccess && hash && !hasNotified) {
+      toast.success(`Successfully contributed ${amount} KNET!`, {
+        description: `Transaction: ${hash.slice(0, 10)}...${hash.slice(-8)}`,
+      });
+      onContribute(amount);
+      setAmount("");
+      setHasNotified(true);
+    }
+  }, [isSuccess, hash, amount, onContribute, hasNotified]);
+
+  // Reset notification flag when hash changes
+  useEffect(() => {
+    if (hash) {
+      setHasNotified(false);
+    }
+  }, [hash]);
+
+  const handleContribute = async () => {
     if (!amount || parseFloat(amount) <= 0) {
       toast.error("Please enter a valid amount");
       return;
@@ -27,7 +107,32 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
       return;
     }
 
-    onContribute(amount);
+    const decimals = knetDecimals || 18;
+    const balance = knetBalance ? formatUnits(knetBalance as bigint, decimals) : "0";
+    
+    if (!knetBalance || parseFloat(balance) < parseFloat(amount)) {
+      toast.error("Insufficient KNET balance");
+      return;
+    }
+
+    if (!address) {
+      toast.error("Please connect your wallet");
+      return;
+    }
+
+    try {
+      // ERC20 transfer function
+      writeContract({
+        account: address,
+        chain: bsc,
+        address: KNET_TOKEN_ADDRESS,
+        abi: ERC20_ABI,
+        functionName: "transfer",
+        args: [RECEIVING_ADDRESS, parseUnits(amount, decimals)],
+      });
+    } catch (error: any) {
+      toast.error(error?.message || "Transaction failed");
+    }
   };
 
   return (
@@ -43,6 +148,23 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
         </div>
 
         <div className="space-y-4">
+          {isConnected && (
+            <div className="grid grid-cols-2 gap-4 p-4 bg-secondary/30 rounded-lg border border-border">
+              <div>
+                <p className="text-xs text-muted-foreground mb-1">BNB Balance</p>
+                <p className="text-lg font-semibold text-foreground">
+                  {bnbBalance ? parseFloat(formatUnits(bnbBalance.value, bnbBalance.decimals)).toFixed(4) : "0.0000"}
+                </p>
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground mb-1">KNET Balance</p>
+                <p className="text-lg font-semibold text-foreground">
+                  {knetBalance ? parseFloat(formatUnits(knetBalance as bigint, knetDecimals || 18)).toFixed(2) : "0.00"}
+                </p>
+              </div>
+            </div>
+          )}
+
           <div>
             <label className="text-sm text-muted-foreground mb-2 block">
               Amount (KNET)
@@ -53,7 +175,7 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               className="bg-secondary border-border focus:border-primary transition-colors"
-              disabled={!isConnected}
+              disabled={!isConnected || isPending || isConfirming}
             />
             <p className="text-xs text-muted-foreground mt-2">
               Maximum: 30,000 KNET
@@ -65,9 +187,10 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
               onClick={handleContribute}
               className="w-full bg-gradient-primary hover:shadow-glow-primary transition-all font-semibold"
               size="lg"
+              disabled={isPending || isConfirming}
             >
-              Contribute Now
-              <ArrowRight className="w-4 h-4 ml-2" />
+              {isPending || isConfirming ? "Processing..." : "Contribute Now"}
+              {!isPending && !isConfirming && <ArrowRight className="w-4 h-4 ml-2" />}
             </Button>
           ) : (
             <Button 
