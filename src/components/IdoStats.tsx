@@ -103,7 +103,7 @@ export function IdoStats({ userContribution, totalRaised, targetAmount }: IdoSta
             </div>
           </div>
 
-          {!knetData.loading && knetData.amount > 0 && (
+          {/* {!knetData.loading && knetData.amount > 0 && (
             <div className="mt-4 pt-3 border-t border-border/50">
               <div className="flex items-center justify-between text-xs text-muted-foreground">
                 <span>1 KNET = {(knetData.price).toFixed(6)} USDT</span>
@@ -115,7 +115,7 @@ export function IdoStats({ userContribution, totalRaised, targetAmount }: IdoSta
                 </span>
               </div>
             </div>
-          )}
+          )} */}
         </div>
       </Card>
 
@@ -123,14 +123,14 @@ export function IdoStats({ userContribution, totalRaised, targetAmount }: IdoSta
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-muted-foreground">📈 Fundraising Progress</span>
+              <span className="text-muted-foreground">Fundraising Progress</span>
               <div className="px-2 py-1 bg-primary/10 rounded-full text-xs font-medium text-primary">
                 Live Update
               </div>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-sm text-muted-foreground">
-                {totalRaised} / {targetAmount} KNET
+                {totalRaised} / {formatNumber(knetData.amount, 0)} KNET
               </span>
               <span className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent">
                 {progress.toFixed(1)}%
