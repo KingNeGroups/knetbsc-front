@@ -144,7 +144,7 @@ export function IdoStats() {
              {/* <span className="text-lg font-medium text-secondary/80">KNET</span> */}
           </div>
           <div className="mt-2 text-xs text-secondary/60">
-            {totalRaised && parseFloat(totalRaised) > 0 ? `${progress.toFixed(1)}% Complete` : "Not Started"}
+            {totalRaised && parseFloat(totalRaised) > 0 ? `${progress.toFixed(4)}% Complete` : "Not Started"}
           </div>
         </div>
       </Card>
@@ -206,7 +206,7 @@ export function IdoStats() {
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-muted-foreground">Fundraising Progress</span>
+              {/* <span className="text-muted-foreground">Fundraising Progress</span> */}
               <div className="px-2 py-1 bg-primary/10 rounded-full text-xs font-medium text-primary">
                 Live Update
               </div>
@@ -216,7 +216,7 @@ export function IdoStats() {
                 {totalRaised} / {formatNumber(knetData.amount, 0)} KNET
               </span>
               <span className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent">
-                {progress.toFixed(1)}%
+                {progress.toFixed(4)}%
               </span>
             </div>
           </div>
