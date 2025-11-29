@@ -822,41 +822,33 @@ export function FloaIdoFusion() {
                     <div className="relative">
                       <div className="relative bg-black/30 backdrop-blur-sm rounded-2xl border border-yellow-500/30 p-8">
                         <div className="relative w-64 h-64 mx-auto">
-                          {/* Simple SVG Pie Chart */}
-                          <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
-                            {/* Train to Earn - 92% */}
-                            <circle
-                              cx="50"
-                              cy="50"
-                              r="40"
-                              fill="none"
-                              stroke="url(#gradient1)"
-                              strokeWidth="20"
-                              strokeDasharray={`${92 * 2.51} ${8 * 2.51}`}
+                          {/* SVG Pie Chart - Using path segments for perfect closure */}
+                          <svg viewBox="0 0 100 100" className="w-full h-full">
+                            {/* Train to Earn - 92% - Path segment */}
+                            <path
+                              d="M 50 50 L 50 10 A 40 40 0 1 1 21.2 78.8 Z"
+                              fill="url(#gradient1)"
                               className="drop-shadow-lg"
                             />
-                            {/* Public Sale - 5% */}
-                            <circle
-                              cx="50"
-                              cy="50"
-                              r="40"
-                              fill="none"
-                              stroke="url(#gradient2)"
-                              strokeWidth="20"
-                              strokeDasharray={`${5 * 2.51} ${95 * 2.51}`}
-                              strokeDashoffset="-${92 * 2.51}"
+
+                            {/* Public Sale - 5% - Path segment */}
+                            <path
+                              d="M 50 50 L 21.2 78.8 A 40 40 0 0 1 13.6 69.3 Z"
+                              fill="url(#gradient2)"
                               className="drop-shadow-lg"
                             />
-                            {/* Liquidity Pools - 3% */}
-                            <circle
-                              cx="50"
-                              cy="50"
-                              r="40"
-                              fill="none"
-                              stroke="url(#gradient3)"
-                              strokeWidth="20"
-                              strokeDasharray={`${3 * 2.51} ${97 * 2.51}`}
-                              strokeDashoffset="-${97 * 2.51}"
+
+                            {/* Liquidity Pools - 3% - Path segment */}
+                            <path
+                              d="M 50 50 L 13.6 69.3 A 40 40 0 0 1 10 50 Z"
+                              fill="url(#gradient3)"
+                              className="drop-shadow-lg"
+                            />
+
+                            {/* Complete the circle back to start */}
+                            <path
+                              d="M 50 50 L 10 50 A 40 40 0 0 1 50 10 Z"
+                              fill="url(#gradient1)"
                               className="drop-shadow-lg"
                             />
 
@@ -882,6 +874,17 @@ export function FloaIdoFusion() {
                               <div className="text-3xl font-bold text-yellow-300">100M</div>
                               <div className="text-sm text-gray-400">$FLOA</div>
                             </div>
+                          </div>
+
+                          {/* Legend indicators around the chart */}
+                          <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
+                            <div className="w-3 h-3 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full shadow-lg" />
+                          </div>
+                          <div className="absolute top-1/2 -right-2 transform -translate-y-1/2">
+                            <div className="w-3 h-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full shadow-lg" />
+                          </div>
+                          <div className="absolute bottom-1/2 left-1/2 transform -translate-x-1/2 translate-y-8">
+                            <div className="w-3 h-3 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full shadow-lg" />
                           </div>
                         </div>
                       </div>
@@ -911,18 +914,18 @@ export function FloaIdoFusion() {
 
                       {/* Public Sale */}
                       <div className="relative group">
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <div className="relative bg-black/30 backdrop-blur-sm rounded-xl border border-blue-500/30 p-4">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                              <div className="w-4 h-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full" />
+                              <div className="w-4 h-4 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full" />
                               <div>
-                                <h4 className="text-blue-300 font-semibold">Public Sale</h4>
+                                <h4 className="text-cyan-300 font-semibold">Public Sale</h4>
                                 <p className="text-gray-400 text-sm">Initial token offering & community distribution</p>
                               </div>
                             </div>
                             <div className="text-right">
-                              <div className="text-2xl font-bold text-blue-300">5%</div>
+                              <div className="text-2xl font-bold text-cyan-300">5%</div>
                               <div className="text-sm text-gray-400">5,000,000</div>
                             </div>
                           </div>
@@ -935,14 +938,15 @@ export function FloaIdoFusion() {
                         <div className="relative bg-black/30 backdrop-blur-sm rounded-xl border border-cyan-500/30 p-4">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                              <div className="w-4 h-4 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full" />
+                              <div className="w-4 h-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full" />
+
                               <div>
-                                <h4 className="text-cyan-300 font-semibold">Liquidity Pools</h4>
+                                <h4 className="text-blue-300 font-semibold">Liquidity Pools</h4>
                                 <p className="text-gray-400 text-sm">DEX liquidity & trading stability</p>
                               </div>
                             </div>
                             <div className="text-right">
-                              <div className="text-2xl font-bold text-cyan-300">3%</div>
+                              <div className="text-2xl font-bold text-blue-300">3%</div>
                               <div className="text-sm text-gray-400">3,000,000</div>
                             </div>
                           </div>

@@ -144,7 +144,7 @@ export const Footer = () => {
                   <div className="relative transform -rotate-1 group">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
                     <Link
-                      to="/language"
+                      to="/"
                       className="flex items-center justify-between p-5 glass-card-light rounded-[2rem_1rem_3rem_1rem] border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 group-hover:scale-[1.02] relative overflow-hidden"
                     >
                       <div className="flex items-center gap-3">
@@ -163,7 +163,7 @@ export const Footer = () => {
                   <div className="relative transform rotate-2 group">
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
                     <Link
-                      to="/language"
+                      to="/"
                       className="flex items-center justify-between p-5 glass-card-light rounded-[1rem_3rem_2rem_1rem] border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 group-hover:scale-[1.02] relative overflow-hidden"
                     >
                       <div className="flex items-center gap-3">
