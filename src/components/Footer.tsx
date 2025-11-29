@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Twitter, Github, MessageSquare, Mail, Globe, Send } from "lucide-react";
+import { Twitter, Github, MessageSquare, Mail, Globe, Send, ExternalLink } from "lucide-react";
 import kingnetLogo from "@/assets/logo.png";
 import solgenLogo from "@/assets/img/floa/solgen+logo.png";
 
@@ -47,75 +47,155 @@ export const Footer = () => {
       <div className="container relative z-10">
         {/* Main Content */}
         <div className="py-16">
-          <div className="grid grid-cols-1 gap-12">
-            {/* Brand Section */}
-            <div className="lg:col-span-2 space-y-6">
-              <div className="flex items-center gap-6 flex-wrap">
-                <Link to="/" className="inline-flex items-center gap-3 group">
-                  <img
-                    src={kingnetLogo}
-                    alt="KINGNET AI Logo"
-                    className="h-12 object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                  {/* <span className="text-2xl font-bold gradient-text">KINGNET AI</span> */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Brand Section - Left Column */}
+            <div className="lg:col-span-1 space-y-8 transform -rotate-1 relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-900/20 to-blue-900/20 backdrop-blur-xl rounded-[3rem_1rem_4rem_1rem] blur-xl" />
+
+              <div className="relative space-y-6">
+                <Link to="/" className="inline-flex items-center gap-4 group">
+                  <div className="relative">
+                    <img
+                      src={kingnetLogo}
+                      alt="KINGNET AI Logo"
+                      className="h-14 object-contain transition-all duration-500 group-hover:scale-110 group-hover:rotate-3"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                  <span className="text-2xl font-bold gradient-text transform group-hover:scale-105 transition-transform duration-300">KINGNET AI</span>
                 </Link>
 
-                
-              </div>
-
-              <div className="flex items-start gap-4 p-4 glass-card-light rounded-xl">
-                <MessageSquare className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                <p className="text-sm text-muted-foreground italic">
-                  The next-generation decentralized token issuance platform, an AI-driven fair launch ecosystem providing the most reliable token creation and management solutions for global innovators.
-                </p>
-              </div>
-
-              {/* Social Links */}
-              <div className="flex items-center gap-3">
-                {socialLinks.map((social, index) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group relative"
-                    >
-                      <div className="w-10 h-10 rounded-lg glass-card-light flex items-center justify-center transition-all duration-300 hover:bg-primary/10 hover:scale-110 hover-lift">
-                        <Icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                <div className="relative transform rotate-2">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-cyan-900/20 backdrop-blur-xl rounded-[2rem_1rem_3rem_1rem] blur-lg" />
+                  <div className="relative p-6 glass-card-light rounded-[2rem_1rem_3rem_1rem] border border-purple-500/20">
+                    <div className="flex items-start gap-4">
+                      <div className="relative">
+                        <MessageSquare className="w-6 h-6 text-primary mt-1 flex-shrink-0 transform -rotate-3" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-cyan-500/20 rounded-full blur-md" />
                       </div>
-                    </a>
-                  );
-                })}
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        The next-generation decentralized token issuance platform, an AI-driven fair launch ecosystem providing the most reliable token creation and management solutions for global innovators.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Social Links - Asymmetric Layout */}
+                <div className="relative transform -rotate-2">
+                  <div className="flex flex-wrap gap-3">
+                    {socialLinks.map((social, index) => {
+                      const Icon = social.icon;
+                      return (
+                        <a
+                          key={index}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group relative transform hover:scale-110 transition-all duration-300"
+                          style={{
+                            transform: `rotate(${index % 2 === 0 ? index * 3 : -index * 3}deg)`,
+                            animationDelay: `${index * 0.1}s`
+                          }}
+                        >
+                          <div className="w-12 h-12 rounded-xl glass-card-light flex items-center justify-center transition-all duration-300 hover:bg-primary/10 hover:shadow-xl hover:shadow-primary/20 hover-lift border border-primary/10 hover:border-primary/30 relative overflow-hidden">
+                            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            <Icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-all duration-300 relative z-10 transform group-hover:rotate-6" />
+                          </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
-        
-          </div>
-        </div>
 
-        {/* Bottom Bar */}
-        <div className="py-6 border-t border-border/30">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-sm text-muted-foreground">
-              © 2025 KINGNET AI Laboratory. All Rights Reserved
+            {/* Center Spacer - Floating Elements */}
+            <div className="lg:col-span-1 relative hidden lg:block">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/10 rounded-full w-32 h-32 blur-xl animate-pulse" />
+                  <div className="relative flex items-center justify-center w-32 h-32 rounded-full border border-purple-500/20 glass-card-light transform rotate-6 animate-float">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500/20 to-cyan-500/10 backdrop-blur-xl flex items-center justify-center transform -rotate-6">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-400/30 to-cyan-400/30 backdrop-blur-md animate-pulse" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Connection Elements */}
+              <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-purple-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(139,92,246,0.6)] transform rotate-12" />
+              <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(6,182,212,0.6)] transform -rotate-6" style={{ animationDelay: "0.5s" }} />
+              <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-blue-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.6)] transform rotate-3" style={{ animationDelay: "1s" }} />
             </div>
-            <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              {/* <span>由 ❤️ 和 AI 驱动</span> */}
-              <Link
-                to="/language"
-                className="flex items-center gap-1 hover:text-primary transition-colors"
-              >
-                {/* <Globe className="w-4 h-4" /> */}
-                <span>Content Copyright Agreement</span>
-              </Link>
-              <Link
-                to="/language"
-                className="flex items-center gap-1 hover:text-primary transition-colors"
-              >
-                {/* <Globe className="w-4 h-4" /> */}
-                <span>Privacy Protection Framework</span>
-              </Link>
+
+            {/* Links Section - Right Column */}
+            <div className="lg:col-span-1 space-y-6 transform rotate-1 relative">
+              <div className="absolute -inset-4 bg-gradient-to-l from-blue-900/20 to-purple-900/20 backdrop-blur-xl rounded-[1rem_3rem_2rem_4rem] blur-xl" />
+
+              <div className="relative space-y-6">
+                <div className="text-center space-y-4">
+                  <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-900/50 to-purple-900/50 rounded-full border border-blue-500/30 backdrop-blur-md text-blue-300 text-sm font-medium shadow-lg transform -rotate-2 hover:rotate-0 transition-all duration-500">
+                    <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
+                    <span className="uppercase tracking-[0.2em] font-bold">Legal & Policy</span>
+                    <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(139,92,246,0.8)]" />
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="relative transform -rotate-1 group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+                    <Link
+                      to="/language"
+                      className="flex items-center justify-between p-5 glass-card-light rounded-[2rem_1rem_3rem_1rem] border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 group-hover:scale-[1.02] relative overflow-hidden"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="relative">
+                          <Globe className="w-5 h-5 text-blue-400 transform group-hover:rotate-12 transition-all duration-300" />
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-400/30 to-cyan-400/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
+                        <span className="text-blue-300 font-medium group-hover:text-blue-200 transition-colors">Content Copyright Agreement</span>
+                      </div>
+                      <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:bg-blue-500/30 transition-all duration-300 transform group-hover:translate-x-1">
+                        <ExternalLink className="w-3 h-3 text-blue-400" />
+                      </div>
+                    </Link>
+                  </div>
+
+                  <div className="relative transform rotate-2 group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+                    <Link
+                      to="/language"
+                      className="flex items-center justify-between p-5 glass-card-light rounded-[1rem_3rem_2rem_1rem] border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 group-hover:scale-[1.02] relative overflow-hidden"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="relative">
+                          <div className="w-5 h-5 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-lg transform group-hover:rotate-12 transition-all duration-300" />
+                          <div className="absolute inset-0 bg-gradient-to-r from-purple-400/30 to-cyan-400/20 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
+                        <span className="text-purple-300 font-medium group-hover:text-purple-200 transition-colors">Privacy Protection Framework</span>
+                      </div>
+                      <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center group-hover:bg-purple-500/30 transition-all duration-300 transform group-hover:translate-x-1">
+                        <ExternalLink className="w-3 h-3 text-purple-400" />
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Copyright - Floating Badge */}
+                <div className="relative transform -rotate-1 mt-8">
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-900/30 to-blue-900/20 backdrop-blur-xl rounded-[3rem_1rem_2rem_1rem] blur-lg" />
+                  <div className="relative p-4 glass-card-light rounded-[3rem_1rem_2rem_1rem] border border-gray-500/20 text-center">
+                    <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                      <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse" />
+                      <span>© 2025 KINGNET AI Laboratory</span>
+                      <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }} />
+                    </div>
+                    <div className="text-xs text-muted-foreground mt-1 opacity-80">
+                      All Rights Reserved
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
