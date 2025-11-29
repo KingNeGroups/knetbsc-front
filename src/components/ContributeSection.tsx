@@ -3,46 +3,19 @@ import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useAccount, useBalance, useReadContract, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
+import { useAccount, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
 import { useAppKit } from "@reown/appkit/react";
 import { toast } from "sonner";
 import { Wallet, ArrowRight, Copy, CopyCheck } from "lucide-react";
-import { parseUnits, formatUnits } from "viem";
+import { parseUnits } from "viem";
 import { bsc } from "@reown/appkit/networks";
+import { useAllBalances, KNET_TOKEN_ADDRESS, ERC20_ABI } from "@/hooks/use-token-balance";
 
 interface ContributeSectionProps {
   onContribute: (amount: string) => void;
 }
 
-const KNET_TOKEN_ADDRESS = "0x8b24bf9fe8bb1d4d9dea81eebc9fed6f0fc67a46" as const;
 const RECEIVING_ADDRESS = "0xf0B47977fD55C9c329433064A3f85707119e95Dc" as const;
-
-const ERC20_ABI = [
-  {
-    name: "balanceOf",
-    type: "function",
-    stateMutability: "view",
-    inputs: [{ name: "account", type: "address" }],
-    outputs: [{ type: "uint256" }],
-  },
-  {
-    name: "decimals",
-    type: "function",
-    stateMutability: "view",
-    inputs: [],
-    outputs: [{ type: "uint8" }],
-  },
-  {
-    name: "transfer",
-    type: "function",
-    stateMutability: "nonpayable",
-    inputs: [
-      { name: "to", type: "address" },
-      { name: "amount", type: "uint256" },
-    ],
-    outputs: [{ type: "bool" }],
-  },
-] as const;
 
 export function ContributeSection({ onContribute }: ContributeSectionProps) {
   const [amount, setAmount] = useState("");
@@ -53,24 +26,8 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
   const { address, isConnected } = useAccount();
   const { open } = useAppKit();
 
-  // 获取 BNB balance
-  const { data: bnbBalance } = useBalance({ address });
-
-  // 获取 KNET balance
-  const { data: knetBalance, refetch: refetchKnetBalance } = useReadContract({
-    address: KNET_TOKEN_ADDRESS,
-    abi: ERC20_ABI,
-    functionName: "balanceOf",
-    args: address ? [address] : undefined,
-    watch: true, // 自动监听更新
-  });
-
-  // 获取 KNET decimals
-  const { data: knetDecimals } = useReadContract({
-    address: KNET_TOKEN_ADDRESS,
-    abi: ERC20_ABI,
-    functionName: "decimals",
-  });
+  // 使用全局 hooks 获取所有余额
+  const { bnbBalance, formattedBnbBalance, knetBalance, knetDecimals, formattedKnetBalance, refetchKnetBalance } = useAllBalances();
 
   // 写入合约
   const { writeContract, data: txHash, isPending } = useWriteContract();
@@ -103,7 +60,7 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
     if (!address) return toast.error("Please connect your wallet");
 
     const decimals = knetDecimals || 18;
-    const balance = knetBalance ? parseFloat(formatUnits(knetBalance as bigint, decimals)) : 0;
+    const balance = formattedKnetBalance;
 
     if (balance < parseFloat(amount)) return toast.error("Insufficient KNET balance");
 
@@ -144,9 +101,8 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
   };
 
   const handleMaxAmount = () => {
-    if (knetBalance && knetDecimals) {
-      const balance = parseFloat(formatUnits(knetBalance as bigint, knetDecimals));
-      const maxAllowed = Math.min(balance, 30000); // 不超过30,000 KNET的限制
+    if (formattedKnetBalance > 0) {
+      const maxAllowed = Math.min(formattedKnetBalance, 30000); // 不超过30,000 KNET的限制
       setAmount(maxAllowed.toString());
     }
   };
@@ -207,14 +163,14 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
                 <div className="absolute -top-1 -left-1 w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
                 <p className="text-xs text-gray-400 mb-2 uppercase tracking-wider">BNB Balance</p>
                 <p className="text-xl font-bold text-blue-300">
-                  {bnbBalance ? parseFloat(formatUnits(bnbBalance.value, bnbBalance.decimals)).toFixed(4) : "0.0000"}
+                  {formattedBnbBalance.toFixed(4)}
                 </p>
               </div>
               <div className="relative">
                 <div className="absolute -top-1 -right-1 w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
                 <p className="text-xs text-gray-400 mb-2 uppercase tracking-wider">KNET Balance</p>
                 <p className="text-xl font-bold text-purple-300">
-                  {knetBalance ? parseFloat(formatUnits(knetBalance as bigint, knetDecimals || 18)).toFixed(2) : "0.00"}
+                  {formattedKnetBalance.toFixed(2)}
                 </p>
               </div>
             </div>
@@ -248,7 +204,7 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
               </div>
             </div>
             <div className="flex items-center justify-between text-xs">
-              <p className="text-gray-500">Max contribution: <span className="text-blue-400 font-bold"> {knetBalance ? parseFloat(formatUnits(knetBalance as bigint, knetDecimals || 18)).toFixed(2) : "0.00"} KNET</span></p>
+              <p className="text-gray-500">Max contribution: <span className="text-blue-400 font-bold"> {formattedKnetBalance.toFixed(2)} KNET</span></p>
               <div className="px-2 py-1 bg-blue-900/30 rounded-full text-blue-300 font-medium">
                 Live
               </div>
