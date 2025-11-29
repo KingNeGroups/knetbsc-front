@@ -60,7 +60,7 @@ const Index = () => {
       <FuturisticHeader />
 
       {/* Futuristic Main content */}
-      <main className="relative z-10 container mx-auto px-6 py-24">
+      <main className="relative z-10 container mx-auto px-6 pt-24">
         <div className="max-w-7xl mx-auto space-y-20">
           {/* Revolutionary Hero Section */}
           <div className="text-center space-y-8 animate-slide-in relative">
