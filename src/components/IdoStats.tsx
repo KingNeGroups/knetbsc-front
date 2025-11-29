@@ -97,32 +97,32 @@ export function IdoStats() {
     setProgress(percentage);
   }, [totalRaised, targetAmount]);
 
-  useEffect(() => {
-    const fetchKnetData = async () => {
-      try {
-        setKnetData(prev => ({ ...prev, loading: true }));
-        const data = await calculateKnetForTargetUsdt();
-        setKnetData({
-          // amount: data.knetAmount,
-          amount: targetAmount,
-          price: data.price,
-          targetUsdt: data.targetUsdt,
-          loading: false
-        });
-        // setTargetAmount(data.knetAmount)
-      } catch (error) {
-        console.error('Failed to fetch KNET data:', error);
-        setKnetData(prev => ({ ...prev, loading: false }));
-      }
-    };
+  // useEffect(() => {
+  //   const fetchKnetData = async () => {
+  //     try {
+  //       setKnetData(prev => ({ ...prev, loading: true }));
+  //       const data = await calculateKnetForTargetUsdt();
+  //       setKnetData({
+  //         // amount: data.knetAmount,
+  //         amount: targetAmount,
+  //         price: data.price,
+  //         targetUsdt: data.targetUsdt,
+  //         loading: false
+  //       });
+  //       // setTargetAmount(data.knetAmount)
+  //     } catch (error) {
+  //       console.error('Failed to fetch KNET data:', error);
+  //       setKnetData(prev => ({ ...prev, loading: false }));
+  //     }
+  //   };
 
-    fetchKnetData();
+  //   fetchKnetData();
 
-    // 每30秒刷新一次价格
-    const interval = setInterval(fetchKnetData, 30000);
+  //   // 每30秒刷新一次价格
+  //   const interval = setInterval(fetchKnetData, 30000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   // 设置截止日期为 2025/12/1 21:00:00
   const targetDate = new Date("2025-12-01T21:00:00");
@@ -172,11 +172,12 @@ export function IdoStats() {
 
           <div className="flex items-baseline gap-3 mb-3">
             <div className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent leading-none">
-              {knetData.loading ? (
+              {/* {knetData.loading ? (
                 <div className="h-10 w-32 bg-muted/50 rounded-lg animate-pulse"></div>
               ) : (
                 formatNumber(knetData.amount, 0)
-              )}
+              )} */}
+              {formatNumber(knetData.amount, 0)}
             </div>
             <span className="text-lg font-semibold text-primary/80">KNET</span>
           </div>
