@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { toast } from "sonner";
 import { useAllBalances } from "@/hooks/use-token-balance";
+import { MobileNavigation } from "@/components/MobileNavigation";
 import logo from "@/assets/logo.png";
 
 interface FuturisticHeaderProps {
@@ -90,6 +91,15 @@ export const FuturisticHeader = ({
           </div>
 
           <div className="flex items-center gap-4">
+            {/* Mobile Navigation */}
+            <MobileNavigation
+              isConnected={isConnected}
+              address={address}
+              onConnect={onConnect}
+              onDisconnect={onDisconnect}
+            />
+
+            {/* Desktop Bridge Button */}
             <a
               href="https://app.transporter.io/?from=solana&tab=token&to=bsc&token=KNET"
               target="_blank"
