@@ -268,6 +268,26 @@ export function FloaIdoFusion() {
                   )}
                 </div>
               </Card>
+
+            {/* Fair Mechanism Section */}
+            <div className="relative transform -rotate-1">
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-900/40 to-cyan-900/40 backdrop-blur-2xl rounded-[4rem_2rem_3rem_1rem] blur-xl" />
+              <Card className="relative bg-black/40 backdrop-blur-2xl border border-purple-500/40 rounded-[4rem_2rem_3rem_1rem] p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-4 h-4 bg-purple-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
+                  <h3 className="text-2xl font-bold text-purple-300 uppercase tracking-wider">Fair Co-Creation</h3>
+                  <div className="w-4 h-4 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(6,182,212,0.8)]" />
+                </div>
+
+                <div className="relative p-6 bg-black/30 rounded-3xl border border-purple-500/30 backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+                  <p className="text-gray-300 leading-relaxed text-lg relative z-10">
+                    <span className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">92%</span> of tokens
+                    generated through intelligent Agent training, with no team allocations or private placements.
+                  </p>
+                </div>
+              </Card>
+            </div>
             </div>
           </div>
 
@@ -338,6 +358,7 @@ export function FloaIdoFusion() {
                   </div>
                 </div>
               </Card>
+              
             </div>
 
             {/* Description Section */}
@@ -360,25 +381,6 @@ export function FloaIdoFusion() {
               </Card>
             </div>
 
-            {/* Fair Mechanism Section */}
-            <div className="relative transform -rotate-1">
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-900/40 to-cyan-900/40 backdrop-blur-2xl rounded-[4rem_2rem_3rem_1rem] blur-xl" />
-              <Card className="relative bg-black/40 backdrop-blur-2xl border border-purple-500/40 rounded-[4rem_2rem_3rem_1rem] p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-4 h-4 bg-purple-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
-                  <h3 className="text-2xl font-bold text-purple-300 uppercase tracking-wider">Fair Co-Creation</h3>
-                  <div className="w-4 h-4 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(6,182,212,0.8)]" />
-                </div>
-
-                <div className="relative p-6 bg-black/30 rounded-3xl border border-purple-500/30 backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                  <p className="text-gray-300 leading-relaxed text-lg relative z-10">
-                    <span className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">92%</span> of tokens
-                    generated through intelligent Agent training, with no team allocations or private placements.
-                  </p>
-                </div>
-              </Card>
-            </div>
           </div>
         </div>
 
