@@ -8,6 +8,8 @@ import { ProjectInfo } from "@/components/ProjectInfo";
 import { toast } from "sonner";
 import { Wallet, LogOut, Sparkles } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { Partners } from "@/components/Partners";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const { open } = useAppKit();
@@ -135,16 +137,18 @@ const Index = () => {
           </div>
         </div>
       </main>
-
+      {/* Partners */}
+      <Partners/>
       {/* Footer */}
-      <footer className="relative z-10 border-t border-border/50 mt-20">
+      {/* <footer className="relative z-10 border-t border-border/50 mt-20">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center text-sm text-muted-foreground">
             <p>© 2024 Floa. All rights reserved.</p>
             <p className="mt-2">Powered by BSC Chain</p>
           </div>
         </div>
-      </footer>
+      </footer> */}
+      <Footer/>
     </div>
   );
 };
