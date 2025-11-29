@@ -58,12 +58,12 @@ const Index = () => {
                 alt="KINGNET AI Logo" 
                 className="h-12 w-auto object-contain"
               />
-              <div>
+              {/* <div>
                 <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                   Floa IDO
                 </h1>
                 <p className="text-xs text-muted-foreground">Train & Earn with AI Agents</p>
-              </div>
+              </div> */}
             </div>
 
             <div className="flex items-center gap-6">
