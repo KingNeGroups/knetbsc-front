@@ -54,7 +54,7 @@ export function FloaIdoFusion() {
 
   const handleContribute = async () => {
     if (!amount || parseFloat(amount) <= 0) return toast.error("Please enter a valid amount");
-    if (parseFloat(amount) > 30000) return toast.error("Maximum contribution is 30,000 KNET");
+    // if (parseFloat(amount) > 30000) return toast.error("Maximum contribution is 30,000 KNET");
 
     if (!address) return toast.error("Please connect your wallet");
 
@@ -101,7 +101,8 @@ export function FloaIdoFusion() {
 
   const handleMaxAmount = () => {
     if (formattedKnetBalance > 0) {
-      const maxAllowed = Math.min(formattedKnetBalance, 30000);
+      // const maxAllowed = Math.min(formattedKnetBalance, 30000);
+      const maxAllowed = formattedKnetBalance;
       setAmount(maxAllowed.toString());
     }
   };

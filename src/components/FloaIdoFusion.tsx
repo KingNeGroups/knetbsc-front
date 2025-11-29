@@ -113,7 +113,8 @@ export function FloaIdoFusion() {
 
   const handleMaxAmount = () => {
     if (formattedKnetBalance > 0) {
-      const maxAllowed = Math.min(formattedKnetBalance, 30000);
+      // const maxAllowed = Math.min(formattedKnetBalance, 30000);
+      const maxAllowed = formattedKnetBalance;
       setAmount(maxAllowed.toString());
     }
   };
