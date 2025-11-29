@@ -7,6 +7,7 @@ import { IdoStats } from "@/components/IdoStats";
 import { ProjectInfo } from "@/components/ProjectInfo";
 import { toast } from "sonner";
 import { Wallet, LogOut, Sparkles } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Index = () => {
   const { open } = useAppKit();
@@ -41,7 +42,8 @@ const Index = () => {
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "4s" }} />
       </div>
 
       {/* Header */}
@@ -49,9 +51,11 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-glow-primary">
-                <Sparkles className="w-6 h-6 text-primary-foreground" />
-              </div>
+              <img 
+                src={logo} 
+                alt="KINGNET AI Logo" 
+                className="h-12 w-auto object-contain"
+              />
               <div>
                 <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                   Floa IDO
