@@ -146,7 +146,7 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
                 </span>
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">
-                Participate in the KingNet AI IDO and help shape the future of intelligent agents
+                Participate in the KINGNFUN IDO and help shape the future of intelligent agents
               </p>
             </div>
           </div>

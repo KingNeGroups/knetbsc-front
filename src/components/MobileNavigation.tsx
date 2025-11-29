@@ -90,7 +90,7 @@ export const MobileNavigation = ({
         <SheetHeader className="border-b border-blue-500/20 pb-4 mb-4">
           <SheetTitle className="text-white flex items-center justify-between">
             <span className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              KINGNET AI
+            KINGNFUN
             </span>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />

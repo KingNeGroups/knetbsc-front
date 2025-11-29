@@ -186,7 +186,7 @@ export const Footer = () => {
                   <div className="relative p-4 glass-card-light rounded-[3rem_1rem_2rem_1rem] border border-gray-500/20 text-center">
                     <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                       <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse" />
-                      <span>© 2025 KINGNET AI Laboratory</span>
+                      <span>© 2025 KINGNFUN</span>
                       <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }} />
                     </div>
                     <div className="text-xs text-muted-foreground mt-1 opacity-80">

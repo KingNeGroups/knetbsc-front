@@ -33,14 +33,14 @@ export function ProjectInfo() {
           <div className="flex flex-col items-center space-y-6 mb-8">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-900/50 to-cyan-900/50 rounded-full border border-purple-500/30 backdrop-blur-md text-purple-300 text-sm font-medium shadow-lg">
               <Globe className="w-4 h-4" />
-              <span className="uppercase tracking-[0.2em] font-semibold">KingNet AI Ecosystem</span>
+              <span className="uppercase tracking-[0.2em] font-semibold">KINGNFUN Ecosystem</span>
               <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
             </div>
 
             <div className="text-center space-y-4">
               <h2 className="text-5xl lg:text-6xl font-bold">
                 <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(139,92,246,0.4)]">
-                  Floa AI Agent
+                  Floa  Agent
                 </span>
               </h2>
 
@@ -51,7 +51,7 @@ export function ProjectInfo() {
               </div>
 
               <div className="text-sm text-purple-300 font-medium uppercase tracking-wider">
-                Powered by KingNet AI
+                Powered by KINGNFUN
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ export function ProjectInfo() {
 
           <div className="space-y-6 text-lg leading-relaxed">
             <p className="text-gray-300">
-              Floa is an open intelligent Agent ecosystem within KingNet AI, featuring cross-platform
+              Floa is an open intelligent Agent ecosystem within KINGNFUN, featuring cross-platform
               intelligent Agents that are <span className="text-purple-400 font-semibold bg-purple-900/30 px-2 py-1 rounded">creatable</span>,
               <span className="text-cyan-400 font-semibold bg-cyan-900/30 px-2 py-1 rounded">trainable</span>,
               <span className="text-blue-400 font-semibold bg-blue-900/30 px-2 py-1 rounded">verifiable</span>, and monetizable.
@@ -135,7 +135,7 @@ export function ProjectInfo() {
               Without requiring coding skills or professional expertise, users can train Agents through
               daily interactive tasks (conversational collaboration, task execution) to handle
               various digital affairs (asset allocation, scenario-specific service integration)
-              and earn KingNet AI ecosystem rewards—serving as
+              and earn KINGNFUN ecosystem rewards—serving as
               <span className="text-cyan-400 font-semibold bg-cyan-900/30 px-2 py-1 rounded">"portable intelligent collaboration partners"</span>
               for everyone entering the era of intelligent Agents.
             </p>
@@ -177,7 +177,7 @@ export function ProjectInfo() {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <Globe className="w-4 h-4 mr-2 relative z-10" />
-            <span className="relative z-10">Official Website</span>
+            <span className="relative z-10">Website</span>
             <ExternalLink className="w-3 h-3 ml-2 relative z-10 group-hover:translate-x-0.5 transition-transform duration-300" />
           </Button>
 
@@ -199,7 +199,7 @@ export function ProjectInfo() {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <BookOpen className="w-4 h-4 mr-2 relative z-10" />
-            <span className="relative z-10">Documentation</span>
+            <span className="relative z-10">Docs</span>
             <ExternalLink className="w-3 h-3 ml-2 relative z-10 group-hover:translate-x-0.5 transition-transform duration-300" />
           </Button>
         </div>
@@ -250,7 +250,7 @@ export function ProjectInfo() {
                 <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" />
                 Powered by
               </div>
-              <div className="font-bold bg-gradient-to-r from-purple-300 to-cyan-300 bg-clip-text text-transparent text-xl">KingNet AI</div>
+              <div className="font-bold bg-gradient-to-r from-purple-300 to-cyan-300 bg-clip-text text-transparent text-xl">KINGNFUN</div>
             </div>
           </div>
         </div>

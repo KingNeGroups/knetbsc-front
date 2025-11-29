@@ -79,12 +79,12 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                 <div className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500/20 to-emerald-600/20 rounded-full border border-green-500/30 backdrop-blur-sm">
                   <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                  <span className="text-green-300 font-medium text-sm uppercase tracking-wider">Live IDO</span>
+                  <span className="text-green-300 font-medium text-sm uppercase tracking-wider"> IDO</span>
                   <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20 backdrop-blur-sm">
                   <Sparkles className="w-4 h-4 text-blue-400 animate-pulse" />
-                  <span className="text-blue-300 font-medium text-sm">KingNet AI Network</span>
+                  <span className="text-blue-300 font-medium text-sm">KINGNFUN Network</span>
                   <Sparkles className="w-4 h-4 text-purple-400 animate-pulse" />
                 </div>
               </div>
@@ -104,7 +104,7 @@ const Index = () => {
                   </div>
                 </h2>
                 <div className="text-3xl md:text-4xl lg:text-5xl text-gray-300 font-medium">
-                  Powered by <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent font-bold">KingNet AI</span>
+                  Powered by <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent font-bold">KINGNFUN</span>
                 </div>
               </div>
 
