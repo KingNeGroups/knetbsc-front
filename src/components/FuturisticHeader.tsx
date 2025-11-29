@@ -177,9 +177,9 @@ export const FuturisticHeader = ({
                             <div className="text-white font-mono font-semibold text-sm">
                               {formattedBnbBalance ? formattedBnbBalance.toFixed(4) : "0.0000"}
                             </div>
-                            <div className="text-xs text-gray-400">
+                            {/* <div className="text-xs text-gray-400">
                               {formattedBnbBalance && formattedBnbBalance > 0 ? "$" + (formattedBnbBalance * 600).toFixed(2) : "$0.00"}
-                            </div>
+                            </div> */}
                           </div>
                         </div>
 
@@ -202,9 +202,9 @@ export const FuturisticHeader = ({
                                   maximumFractionDigits: 2
                                 })}
                               </div>
-                              <div className="text-xs text-gray-400">
+                              {/* <div className="text-xs text-gray-400">
                                 {formattedKnetBalance && formattedKnetBalance > 0 ? "~$" + (formattedKnetBalance * 0.1).toFixed(2) : "$0.00"}
-                              </div>
+                              </div> */}
                             </div>
                           </div>
                         )}
