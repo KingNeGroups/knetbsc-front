@@ -132,13 +132,13 @@ export function FloaIdoFusion() {
 
               <h1 className="mt-8 text-6xl lg:text-8xl font-bold leading-none">
                 <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(139,92,246,0.5)]">
-                  Floa
+                  FLOA
                 </span>
               </h1>
 
               <h2 className="mt-4 text-3xl lg:text-4xl font-bold">
                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                  IDO Revolution
+                Donate to knet to receive Floa
                 </span>
               </h2>
 
@@ -246,7 +246,7 @@ export function FloaIdoFusion() {
                           </>
                         ) : (
                           <>
-                            <span className="uppercase tracking-wider">Contribute Now</span>
+                            <span className="uppercase tracking-wider">Donate</span>
                             <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
                           </>
                         )}
@@ -394,7 +394,7 @@ export function FloaIdoFusion() {
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(139,92,246,0.6)]" />
-                  <h4 className="text-xl font-bold text-purple-300 uppercase tracking-wider">Smart Contract</h4>
+                  <h4 className="text-xl font-bold text-purple-300 uppercase tracking-wider">Address</h4>
                   <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
                 </div>
 
