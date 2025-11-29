@@ -143,6 +143,14 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
     }
   };
 
+  const handleMaxAmount = () => {
+    if (knetBalance && knetDecimals) {
+      const balance = parseFloat(formatUnits(knetBalance as bigint, knetDecimals));
+      const maxAllowed = Math.min(balance, 30000); // 不超过30,000 KNET的限制
+      setAmount(maxAllowed.toString());
+    }
+  };
+
   return (
     <Card className="glass-card p-10 border-blue-500/30 animate-slide-in relative overflow-hidden group backdrop-blur-xl bg-black/40" style={{ animationDelay: "0.1s" }}>
       {/* Futuristic background effects */}
@@ -220,17 +228,27 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
                 placeholder="Enter KNET amount"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-500/30 focus:border-blue-400 text-gray-200 placeholder-gray-500 transition-all duration-300 rounded-xl h-12 text-base backdrop-blur-sm"
+                className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-500/30 focus:border-blue-400 text-gray-200 placeholder-gray-500 transition-all duration-300 rounded-xl h-12 text-base backdrop-blur-sm pr-20"
                 disabled={!isConnected || isPending || isConfirming}
               />
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
-                <div className="w-1 h-1 bg-blue-400 rounded-full animate-pulse" />
-                <div className="w-1 h-1 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }} />
-                <div className="w-1 h-1 bg-cyan-400 rounded-full animate-pulse" style={{ animationDelay: "1s" }} />
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                <div className="flex items-center gap-1">
+                  <div className="w-1 h-1 bg-blue-400 rounded-full animate-pulse" />
+                  <div className="w-1 h-1 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }} />
+                  <div className="w-1 h-1 bg-cyan-400 rounded-full animate-pulse" style={{ animationDelay: "1s" }} />
+                </div>
+                <button
+                  onClick={handleMaxAmount}
+                  disabled={!isConnected || !knetBalance || isPending || isConfirming}
+                  className="px-3 py-1 bg-gradient-to-r from-blue-600/50 to-purple-600/50 hover:from-blue-500/60 hover:to-purple-500/60 disabled:from-gray-600/30 disabled:to-gray-600/30 text-blue-300 disabled:text-gray-500 text-xs font-bold rounded-lg transition-all duration-200 uppercase tracking-wider border border-blue-500/30 disabled:border-gray-500/30"
+                  title="Set maximum amount"
+                >
+                  MAX
+                </button>
               </div>
             </div>
             <div className="flex items-center justify-between text-xs">
-              <p className="text-gray-500">Maximum contribution: <span className="text-blue-400 font-bold">30,000 KNET</span></p>
+              <p className="text-gray-500">Max contribution: <span className="text-blue-400 font-bold"> {knetBalance ? parseFloat(formatUnits(knetBalance as bigint, knetDecimals || 18)).toFixed(2) : "0.00"} KNET</span></p>
               <div className="px-2 py-1 bg-blue-900/30 rounded-full text-blue-300 font-medium">
                 Live
               </div>
