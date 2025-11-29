@@ -6,7 +6,7 @@ import { ContributeSection } from "@/components/ContributeSection";
 import { IdoStats } from "@/components/IdoStats";
 import { ProjectInfo } from "@/components/ProjectInfo";
 import { toast } from "sonner";
-import { Wallet, LogOut, Sparkles, ExternalLink } from "lucide-react";
+import { LogOut, Sparkles, ExternalLink } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Partners } from "@/components/Partners";
 import { Footer } from "@/components/Footer";
@@ -40,36 +40,63 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Enhanced animated background elements */}
+    <div className="min-h-screen relative overflow-hidden bg-black">
+      {/* Futuristic animated background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-radial from-primary/30 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: "0s" }} />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-radial from-secondary/25 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-accent/20 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: "4s" }} />
+        {/* Main gradient orbs */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-radial from-blue-600/40 via-purple-600/20 to-transparent rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-gradient-radial from-purple-600/30 via-blue-600/15 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-radial from-cyan-500/20 via-blue-600/10 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: "4s" }} />
 
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
+        {/* Animated grid pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-black">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)`,
+            backgroundSize: '50px 50px',
+            animation: 'grid-move 20s linear infinite'
+          }} />
+        </div>
 
-        {/* Floating orbs */}
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/10 rounded-full blur-xl animate-float" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-secondary/10 rounded-full blur-xl animate-float" style={{ animationDelay: "3s" }} />
-        <div className="absolute top-2/3 left-1/3 w-20 h-20 bg-accent/10 rounded-full blur-xl animate-float" style={{ animationDelay: "5s" }} />
+        {/* Floating elements */}
+        <div className="absolute top-20 left-20 w-4 h-4 bg-blue-400/60 rounded-full animate-float" style={{ animationDelay: "0s" }} />
+        <div className="absolute top-40 right-32 w-3 h-3 bg-purple-400/60 rounded-full animate-float" style={{ animationDelay: "1s" }} />
+        <div className="absolute bottom-32 left-40 w-5 h-5 bg-cyan-400/60 rounded-full animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-60 left-1/3 w-2 h-2 bg-blue-300/60 rounded-full animate-float" style={{ animationDelay: "3s" }} />
+        <div className="absolute bottom-20 right-1/4 w-3 h-3 bg-purple-300/60 rounded-full animate-float" style={{ animationDelay: "4s" }} />
+
+        {/* Neural network lines */}
+        <svg className="absolute inset-0 w-full h-full" style={{ opacity: 0.1 }}>
+          <defs>
+            <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#3B82F6" />
+              <stop offset="50%" stopColor="#8B5CF6" />
+              <stop offset="100%" stopColor="#06B6D4" />
+            </linearGradient>
+          </defs>
+          <path d="M100,100 Q300,200 500,100 T900,200" stroke="url(#neuralGradient)" strokeWidth="0.5" fill="none" className="animate-pulse" />
+          <path d="M200,50 Q400,150 600,50 T1000,150" stroke="url(#neuralGradient)" strokeWidth="0.5" fill="none" className="animate-pulse" style={{ animationDelay: "1s" }} />
+        </svg>
       </div>
 
-      {/* Enhanced Header */}
-      <header className="relative z-10 border-b border-border/30 backdrop-blur-xl bg-background/80">
-        <div className="container mx-auto px-4 py-5">
+      {/* Futuristic Header */}
+      <header className="relative z-10 border-b border-blue-500/20 backdrop-blur-2xl bg-black/60">
+        <div className="container mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4 group">
+            <div className="flex items-center gap-6 group">
               <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300 animate-pulse" />
                 <img
                   src={logo}
                   alt="KINGNET AI Logo"
-                  className="h-14 w-auto object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_20px_var(--primary)]"
+                  className="relative h-16 w-auto object-contain transition-all duration-500 group-hover:scale-110 drop-shadow-[0_0_30px_rgba(59,130,246,0.5)]"
                 />
-                <div className="absolute -inset-2 bg-gradient-primary opacity-20 blur-xl rounded-full animate-glow" />
               </div>
-             
+              <div className="hidden lg:block">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                  KingNet AI
+                </h1>
+                <p className="text-sm text-gray-400 uppercase tracking-widest">Intelligent Agent Network</p>
+              </div>
             </div>
 
             <div className="flex items-center gap-4">
@@ -77,26 +104,27 @@ const Index = () => {
                 href="https://app.transporter.io/?from=solana&tab=token&to=bsc&token=KNET"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-foreground/70 hover:text-foreground hover:bg-card border border-border/30 rounded-xl transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
+                className="hidden md:flex items-center gap-3 px-6 py-3 text-sm font-medium text-gray-300 hover:text-white bg-blue-900/20 hover:bg-blue-800/30 border border-blue-500/30 hover:border-blue-400/50 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 backdrop-blur-sm"
               >
-                <span className="text-xs uppercase tracking-wider opacity-70">Bridge</span>
-                <ExternalLink className="w-3 h-3" />
+                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+                <span className="uppercase tracking-wider text-xs">Bridge</span>
+                <ExternalLink className="w-4 h-4" />
               </a>
 
               {isConnected ? (
                 <>
-                  <div className="hidden md:flex items-center gap-3 px-5 py-2.5 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl border border-primary/20 backdrop-blur-sm">
+                  <div className="hidden md:flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-900/40 to-purple-900/40 rounded-xl border border-blue-500/30 backdrop-blur-sm">
                     <div className="relative">
-                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
-                      <div className="absolute inset-0 w-3 h-3 bg-primary rounded-full animate-ping" />
+                      <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-pulse" />
+                      <div className="absolute inset-0 w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-ping opacity-50" />
                     </div>
-                    <span className="text-sm font-mono font-medium text-primary">{formatAddress(address!)}</span>
+                    <span className="text-sm font-mono font-medium text-blue-300">{formatAddress(address!)}</span>
                   </div>
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={() => disconnect()}
-                    className="border-destructive/30 text-destructive hover:bg-destructive/10 hover:border-destructive/50 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-destructive/10"
+                    className="border-red-500/30 text-red-400 hover:bg-red-900/20 hover:border-red-400/50 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-red-500/10 backdrop-blur-sm"
                   >
                     <LogOut className="w-4 h-4 mr-2" />
                     <span className="hidden sm:inline">Disconnect</span>
@@ -105,9 +133,9 @@ const Index = () => {
               ) : (
                 <Button
                   onClick={() => open()}
-                  className="bg-gradient-primary hover:shadow-glow-primary transition-all duration-300 rounded-xl px-6 py-3 text-sm font-semibold hover:scale-105 hover:shadow-xl"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white transition-all duration-300 rounded-xl px-8 py-4 text-sm font-semibold hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 backdrop-blur-sm"
                 >
-                  <Wallet className="w-4 h-4 mr-2" />
+                  <div className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse" />
                   Connect Wallet
                 </Button>
               )}
@@ -116,72 +144,114 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Enhanced Main content */}
-      <main className="relative z-10 container mx-auto px-4 py-16">
-        <div className="max-w-7xl mx-auto space-y-12">
-          {/* Enhanced Hero section - KingNet AI Branding */}
-          <div className="text-center space-y-6 animate-slide-in mb-16 relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-secondary/10 rounded-3xl blur-3xl" />
+      {/* Futuristic Main content */}
+      <main className="relative z-10 container mx-auto px-6 py-24">
+        <div className="max-w-7xl mx-auto space-y-20">
+          {/* Revolutionary Hero Section */}
+          <div className="text-center space-y-8 animate-slide-in relative">
+            {/* Holographic background effect */}
+            <div className="absolute inset-0 -m-20">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/10 to-cyan-600/20 rounded-3xl blur-3xl animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-50" />
+            </div>
 
-            <div className="relative space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full border border-primary/20 backdrop-blur-sm text-sm text-primary font-medium mx-auto mb-4">
-                <Sparkles className="w-4 h-4 animate-pulse" />
-                <span>KingNet AI - Intelligent Agent Network</span>
-                <Sparkles className="w-4 h-4 animate-pulse" />
+            <div className="relative space-y-8">
+              {/* Status badges */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                <div className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500/20 to-emerald-600/20 rounded-full border border-green-500/30 backdrop-blur-sm">
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
+                  <span className="text-green-300 font-medium text-sm uppercase tracking-wider">Live IDO</span>
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20 backdrop-blur-sm">
+                  <Sparkles className="w-4 h-4 text-blue-400 animate-pulse" />
+                  <span className="text-blue-300 font-medium text-sm">KingNet AI Network</span>
+                  <Sparkles className="w-4 h-4 text-purple-400 animate-pulse" />
+                </div>
               </div>
 
-              <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
-                <div className="mb-2">
-                  <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-shimmer">
-                    On-Chain AI Agents
-                  </span>
+              {/* Main headline */}
+              <div className="space-y-4">
+                <h2 className="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter">
+                  <div className="mb-4">
+                    <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent animate-shimmer drop-shadow-[0_0_40px_rgba(59,130,246,0.3)]">
+                      On-Chain AI
+                    </span>
+                  </div>
+                  <div className="text-5xl md:text-6xl lg:text-7xl text-gray-200 font-bold">
+                    <span className="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
+                      Intelligence
+                    </span>
+                  </div>
+                </h2>
+                <div className="text-3xl md:text-4xl lg:text-5xl text-gray-300 font-medium">
+                  Powered by <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent font-bold">KingNet AI</span>
                 </div>
-                <div className="text-4xl md:text-5xl lg:text-6xl text-foreground/90 font-medium">
-                  Powered by <span className="text-primary font-bold">KingNet AI</span>
+              </div>
+
+              {/* Enhanced description */}
+              <div className="max-w-5xl mx-auto space-y-4">
+                <p className="text-xl md:text-2xl text-gray-400 leading-relaxed font-light">
+                  Experience the future of decentralized artificial intelligence
+                  <br className="hidden md:block" />
+                  Join the <span className="text-blue-400 font-semibold">intelligent agent revolution</span> on blockchain
+                </p>
+                <div className="flex flex-wrap gap-3 justify-center items-center text-sm text-gray-500">
+                  <span className="px-3 py-1 bg-blue-900/30 rounded-full text-blue-300">• Train AI Agents</span>
+                  <span className="px-3 py-1 bg-purple-900/30 rounded-full text-purple-300">• Join IDO</span>
+                  <span className="px-3 py-1 bg-cyan-900/30 rounded-full text-cyan-300">• Earn KNET Rewards</span>
                 </div>
-              </h2>
+              </div>
 
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
-                Decentralized intelligent agent platform powered by KingNet AI ecosystem
-                <br className="hidden md:block" />
-                Train your AI agents, join the IDO, and earn <span className="text-primary font-semibold">KNET ecosystem rewards</span>
-              </p>
-
-              {/* Hero CTA buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-                <div className="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl border border-primary/30 backdrop-blur-sm">
-                  <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
-                  <span className="text-foreground font-medium">Live IDO</span>
-                  <div className="w-3 h-3 bg-secondary rounded-full animate-pulse" />
-                </div>
-
+              {/* Futuristic CTA section */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
                 <a
                   href="https://floahive.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 hover:shadow-glow-primary hover:shadow-secondary"
+                  className="group relative inline-flex items-center gap-4 px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 overflow-hidden"
                 >
-                  Learn More
-                  <ExternalLink className="w-5 h-5" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative w-3 h-3 bg-white rounded-full animate-pulse" />
+                  <span className="relative uppercase tracking-wider">Explore Ecosystem</span>
+                  <ExternalLink className="relative w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
+
+                <div className="flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-blue-900/40 to-purple-900/40 rounded-2xl border border-blue-500/30 backdrop-blur-sm">
+                  <div className="flex -space-x-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }} />
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" style={{ animationDelay: "1s" }} />
+                  </div>
+                  <span className="text-gray-300 font-medium uppercase tracking-wider text-sm">Now Live</span>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Stats */}
-          <IdoStats 
-            userContribution={userContribution}
-            totalRaised={totalRaised}
-            targetAmount={targetAmount}
-          />
+          {/* Stats Section with enhanced design */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-3xl blur-2xl" />
+            <IdoStats
+              targetAmount={targetAmount}
+            />
+          </div>
 
-          {/* Enhanced two column layout */}
-          <div className="grid lg:grid-cols-2 gap-8 xl:gap-10">
-            <div className="space-y-8">
-              <ContributeSection onContribute={handleContribute} />
+          {/* Revolutionary two column layout with enhanced design */}
+          <div className="grid lg:grid-cols-2 gap-12 xl:gap-16">
+            <div className="space-y-12 relative">
+              {/* Background accent for left column */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-blue-900/10 to-purple-900/10 rounded-3xl blur-2xl" />
+              <div className="relative">
+                <ContributeSection onContribute={handleContribute} />
+              </div>
             </div>
-            <div className="space-y-8">
-              <ProjectInfo />
+            <div className="space-y-12 relative">
+              {/* Background accent for right column */}
+              <div className="absolute -inset-8 bg-gradient-to-bl from-purple-900/10 to-cyan-900/10 rounded-3xl blur-2xl" />
+              <div className="relative">
+                <ProjectInfo />
+              </div>
             </div>
           </div>
         </div>

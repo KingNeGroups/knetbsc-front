@@ -144,115 +144,175 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
   };
 
   return (
-    <Card className="glass-card p-8 border-primary/30 animate-slide-in relative overflow-hidden group" style={{ animationDelay: "0.1s" }}>
-      {/* Background accent */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-primary opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity duration-500" />
+    <Card className="glass-card p-10 border-blue-500/30 animate-slide-in relative overflow-hidden group backdrop-blur-xl bg-black/40" style={{ animationDelay: "0.1s" }}>
+      {/* Futuristic background effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/10 to-black/50" />
+      <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-500/30 to-purple-600/20 rounded-full blur-3xl group-hover:opacity-60 transition-opacity duration-700" />
+      <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-cyan-500/20 to-blue-600/15 rounded-full blur-2xl group-hover:opacity-50 transition-opacity duration-700" />
 
-      {/* Top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+      {/* Animated top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="h-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
+      </div>
 
-      <div className="relative z-10 space-y-6">
-        <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full border border-primary/20 text-primary text-sm font-medium mx-auto">
-            <span>Join KingNet AI IDO</span>
+      {/* Neural network pattern overlay */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="h-full w-full" style={{
+          backgroundImage: `radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.3) 0%, transparent 2px), radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.3) 0%, transparent 2px)`,
+          backgroundSize: '30px 30px'
+        }} />
+      </div>
+
+      <div className="relative z-10 space-y-8">
+        <div className="text-center space-y-4">
+          {/* Futuristic header badge */}
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-900/40 to-purple-900/40 rounded-full border border-blue-500/30 backdrop-blur-sm text-blue-300 text-sm font-medium mx-auto">
+            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+            <span className="uppercase tracking-wider">KingNet AI IDO</span>
+            <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
           </div>
-          <h2 className="text-3xl font-bold">
-            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+
+          <h2 className="text-4xl font-bold">
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(59,130,246,0.3)]">
               Join the Intelligent Revolution
             </span>
           </h2>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            Send KNET tokens to participate in Floa IDO and become a core member of KingNet AI ecosystem
+          <p className="text-gray-400 text-base leading-relaxed max-w-md mx-auto">
+            Send KNET tokens to participate in Floa IDO and become a core member of the KingNet AI ecosystem
           </p>
-          <div className="mt-3 inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-xs text-primary font-medium">
-            <span>🚀 KNET Token Ecosystem</span>
+
+          {/* Enhanced ecosystem badge */}
+          <div className="mt-4 inline-flex items-center gap-3 px-5 py-2.5 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-full border border-blue-500/20 backdrop-blur-sm">
+            <div className="flex -space-x-1">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+              <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: "0.3s" }} />
+              <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" style={{ animationDelay: "0.6s" }} />
+            </div>
+            <span className="text-blue-300 font-medium text-sm uppercase tracking-wider">KNET Token Ecosystem</span>
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-6">
           {isConnected && (
-            <div className="grid grid-cols-2 gap-4 p-4 bg-secondary/30 rounded-lg border border-border">
-              <div>
-                <p className="text-xs text-muted-foreground mb-1">BNB Balance</p>
-                <p className="text-lg font-semibold text-foreground">
+            <div className="grid grid-cols-2 gap-4 p-5 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-xl border border-blue-500/30 backdrop-blur-sm">
+              <div className="relative">
+                <div className="absolute -top-1 -left-1 w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+                <p className="text-xs text-gray-400 mb-2 uppercase tracking-wider">BNB Balance</p>
+                <p className="text-xl font-bold text-blue-300">
                   {bnbBalance ? parseFloat(formatUnits(bnbBalance.value, bnbBalance.decimals)).toFixed(4) : "0.0000"}
                 </p>
               </div>
-              <div>
-                <p className="text-xs text-muted-foreground mb-1">KNET Balance</p>
-                <p className="text-lg font-semibold text-foreground">
+              <div className="relative">
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
+                <p className="text-xs text-gray-400 mb-2 uppercase tracking-wider">KNET Balance</p>
+                <p className="text-xl font-bold text-purple-300">
                   {knetBalance ? parseFloat(formatUnits(knetBalance as bigint, knetDecimals || 18)).toFixed(2) : "0.00"}
                 </p>
               </div>
             </div>
           )}
 
-          <div>
-            <label className="text-sm text-muted-foreground mb-2 block">Amount (KNET)</label>
-            <Input
-              type="number"
-              placeholder="Enter amount"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              className="bg-secondary border-border focus:border-primary transition-colors"
-              disabled={!isConnected || isPending || isConfirming}
-            />
-            <p className="text-xs text-muted-foreground mt-2">Maximum: 30,000 KNET</p>
+          <div className="space-y-3">
+            <label className="text-sm text-gray-300 mb-3 block font-medium uppercase tracking-wider">Contribution Amount (KNET)</label>
+            <div className="relative">
+              <Input
+                type="number"
+                placeholder="Enter KNET amount"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-500/30 focus:border-blue-400 text-gray-200 placeholder-gray-500 transition-all duration-300 rounded-xl h-12 text-base backdrop-blur-sm"
+                disabled={!isConnected || isPending || isConfirming}
+              />
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
+                <div className="w-1 h-1 bg-blue-400 rounded-full animate-pulse" />
+                <div className="w-1 h-1 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }} />
+                <div className="w-1 h-1 bg-cyan-400 rounded-full animate-pulse" style={{ animationDelay: "1s" }} />
+              </div>
+            </div>
+            <div className="flex items-center justify-between text-xs">
+              <p className="text-gray-500">Maximum contribution: <span className="text-blue-400 font-bold">30,000 KNET</span></p>
+              <div className="px-2 py-1 bg-blue-900/30 rounded-full text-blue-300 font-medium">
+                Live
+              </div>
+            </div>
           </div>
 
           {isConnected ? (
             <Button
               onClick={handleContribute}
-              className="w-full bg-gradient-primary hover:shadow-glow-primary transition-all font-semibold"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white transition-all duration-300 font-bold text-lg rounded-xl h-14 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/25 relative overflow-hidden group"
               size="lg"
               disabled={isPending || isConfirming}
             >
-              {isPending || isConfirming ? "Processing..." : "Contribute Now"}
-              {!isPending && !isConfirming && <ArrowRight className="w-4 h-4 ml-2" />}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent animate-shimmer" />
+              <div className="relative flex items-center justify-center">
+                {isPending || isConfirming ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-3" />
+                    Processing Transaction...
+                  </>
+                ) : (
+                  <>
+                    <span className="uppercase tracking-wider">Contribute Now</span>
+                    <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
+                  </>
+                )}
+              </div>
             </Button>
           ) : (
             <Button
               onClick={() => open()}
-              className="w-full bg-gradient-primary hover:shadow-glow-primary transition-all font-semibold"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white transition-all duration-300 font-bold text-lg rounded-xl h-14 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/25 relative overflow-hidden group"
               size="lg"
             >
-              <Wallet className="w-4 h-4 mr-2" />
-              Connect Wallet
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent animate-shimmer" />
+              <div className="relative flex items-center justify-center">
+                <div className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse" />
+                <span className="uppercase tracking-wider">Connect Wallet</span>
+              </div>
             </Button>
           )}
         </div>
 
-        <div className="p-4 bg-secondary/50 rounded-lg border border-border space-y-2 text-xs">
-          <div className="flex justify-between items-center">
-            <span className="text-muted-foreground">Token Contract:</span>
+        <div className="p-5 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-xl border border-blue-500/30 backdrop-blur-sm space-y-3">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+            <span className="text-blue-300 text-xs font-medium uppercase tracking-wider">Smart Contract Information</span>
+          </div>
+
+          <div className="flex justify-between items-center py-2 px-3 bg-black/30 rounded-lg border border-blue-500/20">
+            <span className="text-gray-400 text-xs font-medium">Token Contract:</span>
             <div className="flex items-center gap-2">
-              <span className="text-foreground font-mono">0x8b24...7a46</span>
+              <span className="text-blue-300 font-mono text-xs">0x8b24...7a46</span>
               <button
                 onClick={handleCopyTokenContract}
-                className="p-1 hover:bg-secondary/80 rounded transition-colors"
+                className="p-1.5 hover:bg-blue-800/30 rounded-lg transition-all duration-200 group"
                 title="Copy token contract address"
               >
                 {copiedTokenContract ? (
-                  <CopyCheck className="w-3 h-3 text-green-500" />
+                  <CopyCheck className="w-3 h-3 text-green-400" />
                 ) : (
-                  <Copy className="w-3 h-3 text-muted-foreground hover:text-foreground" />
+                  <Copy className="w-3 h-3 text-gray-400 group-hover:text-blue-300 transition-colors" />
                 )}
               </button>
             </div>
           </div>
-          <div className="flex justify-between items-center">
-            <span className="text-muted-foreground">Receiving Address:</span>
+
+          <div className="flex justify-between items-center py-2 px-3 bg-black/30 rounded-lg border border-purple-500/20">
+            <span className="text-gray-400 text-xs font-medium">Receiving Address:</span>
             <div className="flex items-center gap-2">
-              <span className="text-foreground font-mono">0xf0B4...5Dc</span>
+              <span className="text-purple-300 font-mono text-xs">0xf0B4...5Dc</span>
               <button
                 onClick={handleCopyReceivingAddress}
-                className="p-1 hover:bg-secondary/80 rounded transition-colors"
+                className="p-1.5 hover:bg-purple-800/30 rounded-lg transition-all duration-200 group"
                 title="Copy receiving address"
               >
                 {copiedReceivingAddress ? (
-                  <CopyCheck className="w-3 h-3 text-green-500" />
+                  <CopyCheck className="w-3 h-3 text-green-400" />
                 ) : (
-                  <Copy className="w-3 h-3 text-muted-foreground hover:text-foreground" />
+                  <Copy className="w-3 h-3 text-gray-400 group-hover:text-purple-300 transition-colors" />
                 )}
               </button>
             </div>
