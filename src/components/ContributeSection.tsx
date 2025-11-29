@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useAccount, useBalance, useReadContract, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
 import { useAppKit } from "@reown/appkit/react";
 import { toast } from "sonner";
-import { Wallet, ArrowRight } from "lucide-react";
+import { Wallet, ArrowRight, Copy, CopyCheck } from "lucide-react";
 import { parseUnits, formatUnits } from "viem";
 import { bsc } from "@reown/appkit/networks";
 
@@ -47,6 +47,8 @@ const ERC20_ABI = [
 export function ContributeSection({ onContribute }: ContributeSectionProps) {
   const [amount, setAmount] = useState("");
   const [hasNotified, setHasNotified] = useState(false);
+  const [copiedTokenContract, setCopiedTokenContract] = useState(false);
+  const [copiedReceivingAddress, setCopiedReceivingAddress] = useState(false);
 
   const { address, isConnected } = useAccount();
   const { open } = useAppKit();
@@ -119,6 +121,28 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
     }
   };
 
+  const handleCopyTokenContract = async () => {
+    try {
+      await navigator.clipboard.writeText(KNET_TOKEN_ADDRESS);
+      setCopiedTokenContract(true);
+      toast.success("Token contract address copied!");
+      setTimeout(() => setCopiedTokenContract(false), 2000);
+    } catch (err) {
+      toast.error("Failed to copy address");
+    }
+  };
+
+  const handleCopyReceivingAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(RECEIVING_ADDRESS);
+      setCopiedReceivingAddress(true);
+      toast.success("Receiving address copied!");
+      setTimeout(() => setCopiedReceivingAddress(false), 2000);
+    } catch (err) {
+      toast.error("Failed to copy address");
+    }
+  };
+
   return (
     <Card className="glass-card p-8 border-primary/20 animate-slide-in" style={{ animationDelay: "0.1s" }}>
       <div className="space-y-6">
@@ -185,13 +209,39 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
         </div>
 
         <div className="p-4 bg-secondary/50 rounded-lg border border-border space-y-2 text-xs">
-          <div className="flex justify-between">
+          <div className="flex justify-between items-center">
             <span className="text-muted-foreground">Token Contract:</span>
-            <span className="text-foreground font-mono">0x8b24...7a46</span>
+            <div className="flex items-center gap-2">
+              <span className="text-foreground font-mono">0x8b24...7a46</span>
+              <button
+                onClick={handleCopyTokenContract}
+                className="p-1 hover:bg-secondary/80 rounded transition-colors"
+                title="Copy token contract address"
+              >
+                {copiedTokenContract ? (
+                  <CopyCheck className="w-3 h-3 text-green-500" />
+                ) : (
+                  <Copy className="w-3 h-3 text-muted-foreground hover:text-foreground" />
+                )}
+              </button>
+            </div>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between items-center">
             <span className="text-muted-foreground">Receiving Address:</span>
-            <span className="text-foreground font-mono">0xf0B4...5Dc</span>
+            <div className="flex items-center gap-2">
+              <span className="text-foreground font-mono">0xf0B4...5Dc</span>
+              <button
+                onClick={handleCopyReceivingAddress}
+                className="p-1 hover:bg-secondary/80 rounded transition-colors"
+                title="Copy receiving address"
+              >
+                {copiedReceivingAddress ? (
+                  <CopyCheck className="w-3 h-3 text-green-500" />
+                ) : (
+                  <Copy className="w-3 h-3 text-muted-foreground hover:text-foreground" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>
