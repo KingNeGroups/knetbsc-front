@@ -91,12 +91,7 @@ const Index = () => {
                   className="relative h-16 w-auto object-contain transition-all duration-500 group-hover:scale-110 drop-shadow-[0_0_30px_rgba(59,130,246,0.5)]"
                 />
               </div>
-              <div className="hidden lg:block">
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  KingNet AI
-                </h1>
-                <p className="text-sm text-gray-400 uppercase tracking-widest">Intelligent Agent Network</p>
-              </div>
+             
             </div>
 
             <div className="flex items-center gap-4">
@@ -157,7 +152,7 @@ const Index = () => {
 
             <div className="relative space-y-8">
               {/* Status badges */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                 <div className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500/20 to-emerald-600/20 rounded-full border border-green-500/30 backdrop-blur-sm">
                   <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
                   <span className="text-green-300 font-medium text-sm uppercase tracking-wider">Live IDO</span>
@@ -168,24 +163,12 @@ const Index = () => {
                   <span className="text-blue-300 font-medium text-sm">KingNet AI Network</span>
                   <Sparkles className="w-4 h-4 text-purple-400 animate-pulse" />
                 </div>
-              </div>
+              </div> */}
 
               {/* Main headline */}
               <div className="space-y-4">
-                <h2 className="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter">
-                  <div className="mb-4">
-                    <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent animate-shimmer drop-shadow-[0_0_40px_rgba(59,130,246,0.3)]">
-                      On-Chain AI
-                    </span>
-                  </div>
-                  <div className="text-5xl md:text-6xl lg:text-7xl text-gray-200 font-bold">
-                    <span className="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
-                      Intelligence
-                    </span>
-                  </div>
-                </h2>
-                <div className="text-3xl md:text-4xl lg:text-5xl text-gray-300 font-medium">
-                  Powered by <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent font-bold">KingNet AI</span>
+                <div className="text-5xl md:text-4xl lg:text-5xl text-gray-300 font-medium">
+                  <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent font-bold">KingNet AI</span>
                 </div>
               </div>
 
@@ -197,7 +180,6 @@ const Index = () => {
                   Join the <span className="text-blue-400 font-semibold">intelligent agent revolution</span> on blockchain
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center items-center text-sm text-gray-500">
-                  <span className="px-3 py-1 bg-blue-900/30 rounded-full text-blue-300">• Train AI Agents</span>
                   <span className="px-3 py-1 bg-purple-900/30 rounded-full text-purple-300">• Join IDO</span>
                   <span className="px-3 py-1 bg-cyan-900/30 rounded-full text-cyan-300">• Earn KNET Rewards</span>
                 </div>
@@ -217,14 +199,7 @@ const Index = () => {
                   <ExternalLink className="relative w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
 
-                <div className="flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-blue-900/40 to-purple-900/40 rounded-2xl border border-blue-500/30 backdrop-blur-sm">
-                  <div className="flex -space-x-2">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: "0.5s" }} />
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" style={{ animationDelay: "1s" }} />
-                  </div>
-                  <span className="text-gray-300 font-medium uppercase tracking-wider text-sm">Now Live</span>
-                </div>
+               
               </div>
             </div>
           </div>
