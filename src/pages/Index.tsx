@@ -1,11 +1,7 @@
-import { useState, useEffect } from "react";
 import { useAppKit } from "@reown/appkit/react";
 import { useAccount, useDisconnect } from "wagmi";
 import { Button } from "@/components/ui/button";
-import { ContributeSection } from "@/components/ContributeSection";
-import { IdoStats } from "@/components/IdoStats";
-import { ProjectInfo } from "@/components/ProjectInfo";
-import { toast } from "sonner";
+import { FloaIdoFusion } from "@/components/FloaIdoFusion";
 import { Sparkles, ExternalLink } from "lucide-react";
 import { FuturisticHeader } from "@/components/FuturisticHeader";
 import banner from "@/assets/img/floa/banner.png";
@@ -18,24 +14,8 @@ const Index = () => {
   const { address, isConnected } = useAccount();
   const { disconnect } = useDisconnect();
 
-  const [userContribution, setUserContribution] = useState("0");
-  const [totalRaised, setTotalRaised] = useState("0");
-  const targetAmount = "30000";
-
-  // Simulated contribution handler
-  const handleContribute = (amount: string) => {
-    // In a real implementation, this would interact with the smart contract
-    const newUserContribution = (parseFloat(userContribution) + parseFloat(amount)).toString();
-    const newTotalRaised = (parseFloat(totalRaised) + parseFloat(amount)).toString();
-
-    setUserContribution(newUserContribution);
-    setTotalRaised(newTotalRaised);
-
-    toast.success(`Successfully contributed ${amount} KNET!`, {
-      description: `Your total contribution: ${newUserContribution} KNET`,
-    });
-  };
-
+  
+  
   
   return (
     <div className="min-h-screen relative overflow-hidden bg-black">
@@ -176,26 +156,11 @@ const Index = () => {
             />
           </div> */}
 
-          {/* Revolutionary two column layout with enhanced design */}
-          <div className="grid lg:grid-cols-2 gap-12 xl:gap-16">
-            <div className="space-y-12 relative">
-              {/* Background accent for left column */}
-              <div className="absolute -inset-8 bg-gradient-to-br from-blue-900/10 to-purple-900/10 rounded-3xl blur-2xl" />
-              <div className="relative">
-                <ContributeSection onContribute={handleContribute} />
-              </div>
-            </div>
-            <div className="space-y-12 relative">
-              {/* Background accent for right column */}
-              <div className="absolute -inset-8 bg-gradient-to-bl from-purple-900/10 to-cyan-900/10 rounded-3xl blur-2xl" />
-              <div className="relative">
-                <ProjectInfo />
-              </div>
-            </div>
-          </div>
+          {/* Revolutionary fusion layout with organic design */}
+          <FloaIdoFusion />
 
           {/* Featured Showcase Section */}
-          <div className="relative animate-slide-in" style={{ animationDelay: "0.6s" }}>
+          {/* <div className="relative animate-slide-in" style={{ animationDelay: "0.6s" }}>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-cyan-900/20 rounded-3xl blur-2xl" />
             <div className="relative border border-blue-500/30 rounded-3xl p-12 backdrop-blur-xl bg-black/40">
               <div className="text-center space-y-8">
@@ -211,7 +176,7 @@ const Index = () => {
                  <Partners/>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
       {/* Partners */}
