@@ -89,9 +89,9 @@ export function Countdown({ targetDate, title = "Countdown" }: CountdownProps) {
           </div>
         )}
 
-        <div className="mt-3 text-xs text-muted-foreground text-center">
+        {/* <div className="mt-3 text-xs text-muted-foreground text-center">
           Target: {targetDate.toLocaleString()}
-        </div>
+        </div> */}
       </div>
     </Card>
   );

@@ -138,7 +138,7 @@ export function FloaIdoFusion() {
 
               <h2 className="mt-4 text-3xl lg:text-4xl font-bold">
                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Donate $KNET to receive $FLOA
+               The first project launched on KingnetFun with $KNET
                 </span>
               </h2>
 
@@ -238,26 +238,19 @@ export function FloaIdoFusion() {
             {/* Fair Mechanism Section */}
             <div className="relative transform -rotate-1">
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-900/40 to-cyan-900/40 backdrop-blur-2xl rounded-[4rem_2rem_3rem_1rem] blur-xl" />
-              <Card className="relative bg-black/40 backdrop-blur-2xl border border-purple-500/40 rounded-[4rem_2rem_3rem_1rem] p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-4 h-4 bg-purple-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
-                  <h3 className="text-2xl font-bold text-purple-300 uppercase tracking-wider">$FLOA Token Generation Event</h3>
-                  <div className="w-4 h-4 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(6,182,212,0.8)]" />
-                </div>
+              <Card className="relative bg-black/40 backdrop-blur-2xl border border-cyan-500/30 rounded-[2rem_3rem_1rem_3rem] p-8">
+                <div className="space-y-6 text-lg leading-relaxed">
+                  <p className="text-gray-300">
+                    Floa is an open intelligent Agent ecosystem featuring cross-platform agents that are
+                    <span className="text-purple-400 font-semibold bg-purple-900/30 px-2 py-1 rounded-xl">creatable</span>,
+                    <span className="text-cyan-400 font-semibold bg-cyan-900/30 px-2 py-1 rounded-xl">trainable</span>,
+                    <span className="text-blue-400 font-semibold bg-blue-900/30 px-2 py-1 rounded-xl">and monetizable</span>
+                  </p>
 
-                <div className="relative p-6 bg-black/30 rounded-3xl border border-purple-500/30 backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                  <p className="text-gray-300 leading-relaxed text-lg relative z-10">
-                    1.Mechanism: Proof-of-Burn Access (PoBA)
+                  <p className="text-gray-300">
+                  users train Agents through daily interaction to handle digital tasks—from asset management to service integration—while earning ecosystem rewards. 
+                    <span className="text-cyan-400 font-semibold bg-cyan-900/30 px-2 py-1 rounded-xl">Your personal AI partner, powered by blockchain.</span>
                   </p>
-                  <p>
-                    2.Supply: 
-                    <span className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">1.5% </span> 
-                    of total $FLOA(1,500,000)
-                  </p>
-                  <p>3.Donated $KNET to receive $FLOA tokens. </p>
-                  <p>4.All $KNET collected will be permanently burned after the event.</p>
-                  <p>5.The official $FLOA liquidity pool will be deployed on PancakeSwap following the event conclusion.</p>
                 </div>
               </Card>
             </div>
@@ -372,19 +365,27 @@ export function FloaIdoFusion() {
             {/* Description Section */}
             <div className="relative transform rotate-1">
               <div className="absolute -inset-4 bg-gradient-to-br from-cyan-900/30 via-blue-900/20 to-purple-900/30 backdrop-blur-2xl rounded-[2rem_3rem_1rem_3rem] blur-xl" />
-              <Card className="relative bg-black/40 backdrop-blur-2xl border border-cyan-500/30 rounded-[2rem_3rem_1rem_3rem] p-8">
-                <div className="space-y-6 text-lg leading-relaxed">
-                  <p className="text-gray-300">
-                    Floa is an open intelligent Agent ecosystem featuring cross-platform agents that are
-                    <span className="text-purple-400 font-semibold bg-purple-900/30 px-2 py-1 rounded-xl">creatable</span>,
-                    <span className="text-cyan-400 font-semibold bg-cyan-900/30 px-2 py-1 rounded-xl">trainable</span>,
-                    <span className="text-blue-400 font-semibold bg-blue-900/30 px-2 py-1 rounded-xl">verifiable</span>
-                  </p>
+             
+               <Card className="relative bg-black/40 backdrop-blur-2xl border border-purple-500/40 rounded-[4rem_2rem_3rem_1rem] p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-4 h-4 bg-purple-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
+                  <h3 className="text-2xl font-bold text-purple-300 uppercase tracking-wider">$FLOA Token Generation Event</h3>
+                  <div className="w-4 h-4 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(6,182,212,0.8)]" />
+                </div>
 
-                  <p className="text-gray-300">
-                    Users can train Agents through daily interactive tasks without coding skills, serving as
-                    <span className="text-cyan-400 font-semibold bg-cyan-900/30 px-2 py-1 rounded-xl">"portable intelligent collaboration partners"</span>
+                <div className="relative p-6 bg-black/30 rounded-3xl border border-purple-500/30 backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+                  <p className="text-gray-300 leading-relaxed text-lg relative z-10">
+                    1.Mechanism: Proof-of-Burn Access (PoBA)
                   </p>
+                  <p>
+                    2.Supply: 
+                    <span className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">1.5% </span> 
+                    of total $FLOA(1,500,000)
+                  </p>
+                  <p>3.Donated $KNET to receive $FLOA tokens. </p>
+                  <p>4.All $KNET collected will be permanently burned after the event.</p>
+                  <p>5.The official $FLOA liquidity pool will be deployed on PancakeSwap following the event conclusion.</p>
                 </div>
               </Card>
             </div>
@@ -686,73 +687,17 @@ export function FloaIdoFusion() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-900/15 via-transparent to-purple-900/10 rounded-3xl blur-xl" />
               <div className="relative bg-black/20 backdrop-blur-xl rounded-3xl border border-blue-500/20 p-8">
                 <div className="max-w-4xl mx-auto">
-                  <div className="text-center mb-8">
-                    <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
-                      About Team
-                    </h3>
-                  </div>
 
                   <div className="relative bg-black/30 backdrop-blur-sm rounded-2xl border border-blue-500/30 p-8">
                     <div className="space-y-6 text-lg leading-relaxed">
-                      <p className="text-gray-300 text-center">
-                        Floa is built by a team with experience from
-                      </p>
+                    
 
-                      <div className="flex flex-wrap justify-center gap-4 mb-6">
-                        <div className="px-4 py-2 bg-gradient-to-r from-purple-900/40 to-purple-800/40 rounded-full border border-purple-500/30">
-                          <span className="text-purple-300 font-semibold">Google</span>
-                        </div>
-                        <div className="px-4 py-2 bg-gradient-to-r from-cyan-900/40 to-cyan-800/40 rounded-full border border-cyan-500/30">
-                          <span className="text-cyan-300 font-semibold">Tencent</span>
-                        </div>
-                        <div className="px-4 py-2 bg-gradient-to-r from-blue-900/40 to-blue-800/40 rounded-full border border-blue-500/30">
-                          <span className="text-blue-300 font-semibold">ByteDance</span>
-                        </div>
-                        <div className="px-4 py-2 bg-gradient-to-r from-yellow-900/40 to-yellow-800/40 rounded-full border border-yellow-500/30">
-                          <span className="text-yellow-300 font-semibold">BNB Chain</span>
-                        </div>
-                      </div>
-
-                      <p className="text-gray-300 text-center">
-                        We bring together expertise in
-                      </p>
-
-                      <div className="grid md:grid-cols-3 gap-6 mt-6">
-                        <div className="relative group">
-                          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                          <div className="relative bg-black/40 rounded-xl border border-purple-500/30 p-4 text-center">
-                            {/* <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                              <span className="text-white text-sm font-bold">AI</span>
-                            </div> */}
-                            <h4 className="text-purple-300 font-semibold mb-2">AI Development</h4>
-                            <p className="text-gray-400 text-sm">Cutting-edge artificial intelligence and machine learning expertise</p>
-                          </div>
-                        </div>
-
-                        <div className="relative group">
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                          <div className="relative bg-black/40 rounded-xl border border-blue-500/30 p-4 text-center">
-                            {/* <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                              <span className="text-white text-sm font-bold">SE</span>
-                            </div> */}
-                            <h4 className="text-blue-300 font-semibold mb-2">Scalable Engineering</h4>
-                            <p className="text-gray-400 text-sm">Building robust, scalable product infrastructure</p>
-                          </div>
-                        </div>
-
-                        <div className="relative group">
-                          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                          <div className="relative bg-black/40 rounded-xl border border-cyan-500/30 p-4 text-center">
-                            {/* <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                              <span className="text-white text-sm font-bold">W3</span>
-                            </div> */}
-                            <h4 className="text-cyan-300 font-semibold mb-2">Web3 Protocol</h4>
-                            <p className="text-gray-400 text-sm">Deep knowledge of decentralized systems and blockchain</p>
-                          </div>
-                        </div>
-                      </div>
+                     
 
                       <div className="mt-8 p-6 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-xl border border-blue-500/20">
+                        <p className="text-gray-300 text-center">
+                        Floa is built by a team with experience from Google, Tencent, ByteDance, and BNB Chain. We bring together expertise in AI development, scalable product engineering, and Web3 protocol design.
+                        </p>
                         <p className="text-gray-300 text-center italic">
                           "This cross-disciplinary background enables us to create accessible AI applications while building robust decentralized ecosystems."
                         </p>
