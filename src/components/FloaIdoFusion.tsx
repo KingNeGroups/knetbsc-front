@@ -126,19 +126,19 @@ export function FloaIdoFusion() {
               {/* Floating ecosystem badge */}
               <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-900/60 to-cyan-900/60 rounded-full border border-purple-500/40 backdrop-blur-md text-purple-300 font-medium shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-500">
                 <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
-                <span className="uppercase tracking-[0.3em] font-bold">KINGNFUN</span>
+                <span className="uppercase tracking-[0.3em] font-bold">FLOA</span>
                 <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(6,182,212,0.8)]" />
               </div>
-
+{/* 
               <h1 className="mt-8 text-6xl lg:text-8xl font-bold leading-none">
                 <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(139,92,246,0.5)]">
                   FLOA
                 </span>
-              </h1>
+              </h1> */}
 
               <h2 className="mt-4 text-3xl lg:text-4xl font-bold">
                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Donate to knet to receive Floa
+                Donate KNET to receive FLOA
                 </span>
               </h2>
 
