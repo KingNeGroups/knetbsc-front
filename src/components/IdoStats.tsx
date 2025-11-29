@@ -5,6 +5,7 @@ import { calculateKnetForTargetUsdt, formatNumber } from "@/lib/utils";
 import { useAccount, useReadContract } from "wagmi";
 import { parseUnits, formatUnits } from "viem";
 import { bsc } from "@reown/appkit/networks";
+import { Countdown } from "./Countdown";
 
 const KNET_TOKEN_ADDRESS = "0x8b24bf9fe8bb1d4d9dea81eebc9fed6f0fc67a46";
 const RECEIVING_ADDRESS = "0xf0B47977fD55C9c329433064A3f85707119e95Dc";
@@ -120,8 +121,11 @@ export function IdoStats() {
     return () => clearInterval(interval);
   }, []);
 
+  // 设置截止日期为 2025/12/1 21:00:00
+  const targetDate = new Date("2025-12-01T21:00:00");
+
   return (
-    <div className="grid gap-3 grid-cols-1 md:grid-cols-2  animate-slide-in" style={{ animationDelay: "0.2s" }}>
+    <div className="grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-2  animate-slide-in" style={{ animationDelay: "0.2s" }}>
       {/* <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all group relative overflow-hidden">
         <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-primary opacity-10 rounded-full blur-xl group-hover:opacity-20 transition-opacity" />
         <div className="relative z-10">
@@ -238,6 +242,12 @@ export function IdoStats() {
           )}
         </div>
       </Card>
+       
+      <div className="col-span-1 md:col-span-2">
+      {/* 倒计时组件 */}
+      <Countdown targetDate={targetDate} title="IDO Ends In" />
+      </div>
+
     </div>
   );
 }

@@ -721,9 +721,9 @@ export function FloaIdoFusion() {
                         <div className="relative group">
                           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                           <div className="relative bg-black/40 rounded-xl border border-purple-500/30 p-4 text-center">
-                            <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full mx-auto mb-3 flex items-center justify-center">
+                            {/* <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full mx-auto mb-3 flex items-center justify-center">
                               <span className="text-white text-sm font-bold">AI</span>
-                            </div>
+                            </div> */}
                             <h4 className="text-purple-300 font-semibold mb-2">AI Development</h4>
                             <p className="text-gray-400 text-sm">Cutting-edge artificial intelligence and machine learning expertise</p>
                           </div>
@@ -732,9 +732,9 @@ export function FloaIdoFusion() {
                         <div className="relative group">
                           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                           <div className="relative bg-black/40 rounded-xl border border-blue-500/30 p-4 text-center">
-                            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center">
+                            {/* <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center">
                               <span className="text-white text-sm font-bold">SE</span>
-                            </div>
+                            </div> */}
                             <h4 className="text-blue-300 font-semibold mb-2">Scalable Engineering</h4>
                             <p className="text-gray-400 text-sm">Building robust, scalable product infrastructure</p>
                           </div>
@@ -743,9 +743,9 @@ export function FloaIdoFusion() {
                         <div className="relative group">
                           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                           <div className="relative bg-black/40 rounded-xl border border-cyan-500/30 p-4 text-center">
-                            <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full mx-auto mb-3 flex items-center justify-center">
+                            {/* <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full mx-auto mb-3 flex items-center justify-center">
                               <span className="text-white text-sm font-bold">W3</span>
-                            </div>
+                            </div> */}
                             <h4 className="text-cyan-300 font-semibold mb-2">Web3 Protocol</h4>
                             <p className="text-gray-400 text-sm">Deep knowledge of decentralized systems and blockchain</p>
                           </div>
