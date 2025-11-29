@@ -51,51 +51,108 @@ export function IdoStats({ userContribution, totalRaised, targetAmount }: IdoSta
   }, []);
 
   return (
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 animate-slide-in" style={{ animationDelay: "0.2s" }}>
-      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all">
+    <div className="grid gap-4 grid-cols-1 md:grid-cols-3 xl:grid-cols-4 animate-slide-in" style={{ animationDelay: "0.2s" }}>
+      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all md:col-span-1 xl:col-span-1">
         <div className="text-muted-foreground text-sm mb-2">Your Contribution</div>
         <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
           {userContribution} KNET
         </div>
       </Card>
 
-      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all">
+      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all md:col-span-1 xl:col-span-1">
         <div className="text-muted-foreground text-sm mb-2">Total Raised</div>
         <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
           {totalRaised} KNET
         </div>
       </Card>
 
-      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all">
-        <div className="text-muted-foreground text-sm mb-2">Target Amount</div>
-        <div className="text-3xl font-bold text-foreground">
-          {targetAmount} KNET
-        </div>
-      </Card>
+      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all md:col-span-2 lg:col-span-2 relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-primary/10 rounded-full blur-xl group-hover:bg-gradient-primary/20 transition-all duration-500"></div>
 
-      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all">
-        <div className="text-muted-foreground text-sm mb-2">30,000 USDT = KNET</div>
-        <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-          {knetData.loading ? (
-            "Loading..."
-          ) : (
-            formatNumber(knetData.amount, 2)
-          )} KNET
-        </div>
-        <div className="text-xs text-muted-foreground mt-1">
-          Price: ${knetData.price ? knetData.price.toFixed(8) : '0.00000000'}
-        </div>
-      </Card>
-
-      <Card className="glass-card p-6 md:col-span-2 lg:col-span-4 border-primary/20">
-        <div className="space-y-3">
-          <div className="flex justify-between text-sm">
-            <span className="text-muted-foreground">Progress</span>
-            <span className="text-primary font-semibold">{progress.toFixed(2)}%</span>
+        <div className="relative z-10">
+          <div className="flex items-center justify-between mb-4">
+            <div className="text-muted-foreground text-sm font-medium"> 30,000 USDT Equivalent</div>
+            {knetData.loading && (
+              <div className="flex items-center gap-1">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                <span className="text-xs text-primary">Updating...</span>
+              </div>
+            )}
           </div>
-          <Progress value={progress} className="h-3 bg-secondary">
-            <div className="h-full bg-gradient-primary rounded-full transition-all duration-500 shadow-glow-primary" />
+
+          <div className="flex items-baseline gap-3 mb-3">
+            <div className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent leading-none">
+              {knetData.loading ? (
+                <div className="h-10 w-32 bg-muted/50 rounded-lg animate-pulse"></div>
+              ) : (
+                formatNumber(knetData.amount, 0)
+              )}
+            </div>
+            <span className="text-lg font-semibold text-primary/80">KNET</span>
+          </div>
+
+          <div className="flex items-center justify-between text-xs">
+            <div className="flex items-center gap-2">
+              <span className="text-muted-foreground">Price:</span>
+              <span className="font-mono font-bold text-primary">
+                ${knetData.price ? knetData.price.toFixed(8) : '0.00000000'}
+              </span>
+            </div>
+            <div className="px-2 py-1 bg-primary/10 rounded-full text-xs font-medium text-primary">
+              Live Update
+            </div>
+          </div>
+
+          {!knetData.loading && knetData.amount > 0 && (
+            <div className="mt-4 pt-3 border-t border-border/50">
+              <div className="flex items-center justify-between text-xs text-muted-foreground">
+                <span>1 KNET = {(knetData.price).toFixed(6)} USDT</span>
+                <span className="text-primary font-medium">
+                  ≈ {(knetData.amount * knetData.price).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                  })} USDT
+                </span>
+              </div>
+            </div>
+          )}
+        </div>
+      </Card>
+
+      <Card className="glass-card p-6 md:col-span-3 xl:col-span-4 border-primary/20">
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="text-muted-foreground">📈 Fundraising Progress</span>
+              <div className="px-2 py-1 bg-primary/10 rounded-full text-xs font-medium text-primary">
+                Live Update
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-muted-foreground">
+                {totalRaised} / {targetAmount} KNET
+              </span>
+              <span className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent">
+                {progress.toFixed(1)}%
+              </span>
+            </div>
+          </div>
+          <Progress value={progress} className="h-4 bg-secondary overflow-hidden">
+            <div
+              className="h-full bg-gradient-primary rounded-full transition-all duration-700 shadow-glow-primary relative overflow-hidden"
+              style={{
+                width: `${progress}%`,
+                boxShadow: progress > 0 ? '0 0 20px rgba(var(--primary), 0.5)' : 'none'
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+            </div>
           </Progress>
+          {progress >= 100 && (
+            <div className="text-center text-sm font-medium text-primary animate-pulse">
+              🎉 Fundraising Goal Completed!
+            </div>
+          )}
         </div>
       </Card>
     </div>
