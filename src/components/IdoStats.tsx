@@ -148,7 +148,7 @@ export function IdoStats() {
           <div className="text-muted-foreground text-xs uppercase tracking-wider mb-3 opacity-70">Total</div>
           <div className="text-3xl font-bold bg-gradient-secondary bg-clip-text text-transparent group-hover:scale-105 transition-transform">
             {totalRaised}
-             {/* <span className="text-lg font-medium text-secondary/80">KNET</span> */}
+             <span className="text-lg font-medium text-secondary/80"> KNET</span>
           </div>
           <div className="mt-2 text-xs text-secondary/60">
             {totalRaised && parseFloat(totalRaised) > 0 ? `${progress.toFixed(4)}% Complete` : "Not Started"}
@@ -178,7 +178,7 @@ export function IdoStats() {
                 formatNumber(knetData.amount, 0)
               )}
             </div>
-            {/* <span className="text-lg font-semibold text-primary/80">KNET</span> */}
+            <span className="text-lg font-semibold text-primary/80">KNET</span>
           </div>
 
           <div className="flex items-center justify-between text-xs">
