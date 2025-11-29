@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Twitter, Github, MessageSquare, Mail, Globe, Send } from "lucide-react";
 import kingnetLogo from "@/assets/logo.png";
+import solgenLogo from "@/assets/img/floa/solgen+logo.png";
 
 export const Footer = () => {
 
@@ -49,14 +50,26 @@ export const Footer = () => {
           <div className="grid grid-cols-1 gap-12">
             {/* Brand Section */}
             <div className="lg:col-span-2 space-y-6">
-              <Link to="/" className="inline-flex items-center gap-3 group">
-                <img
-                  src={kingnetLogo}
-                  alt="KINGNET AI Logo"
-                  className="h-12 object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-                {/* <span className="text-2xl font-bold gradient-text">KINGNET AI</span> */}
-              </Link>
+              <div className="flex items-center gap-6 flex-wrap">
+                <Link to="/" className="inline-flex items-center gap-3 group">
+                  <img
+                    src={kingnetLogo}
+                    alt="KINGNET AI Logo"
+                    className="h-12 object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                  {/* <span className="text-2xl font-bold gradient-text">KINGNET AI</span> */}
+                </Link>
+
+                <div className="flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-lg border border-blue-500/30 backdrop-blur-sm">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+                  <span className="text-xs text-blue-300 font-medium">Powered by</span>
+                  <img
+                    src={solgenLogo}
+                    alt="Solgen Logo"
+                    className="h-8 object-contain transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+              </div>
 
               <div className="flex items-start gap-4 p-4 glass-card-light rounded-xl">
                 <MessageSquare className="w-5 h-5 text-primary mt-1 flex-shrink-0" />

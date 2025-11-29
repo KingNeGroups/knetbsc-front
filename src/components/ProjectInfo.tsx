@@ -1,6 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Twitter, BookOpen, Globe } from "lucide-react";
+import img1 from "@/assets/img/floa/1.png";
+import img2 from "@/assets/img/floa/2.jpg";
+import img3 from "@/assets/img/floa/3.png";
 
 export function ProjectInfo() {
   return (
@@ -45,6 +48,45 @@ export function ProjectInfo() {
 
           <div className="mt-2 text-sm text-purple-300 font-medium uppercase tracking-wider">
             Powered by KingNet AI
+          </div>
+        </div>
+
+        {/* Project Image Showcase */}
+        <div className="space-y-6">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="relative group overflow-hidden rounded-xl border border-purple-500/30 bg-black/30">
+              <img
+                src={img1}
+                alt="Floa AI Feature 1"
+                className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-2 text-purple-200 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                AI Training
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-xl border border-cyan-500/30 bg-black/30">
+              <img
+                src={img2}
+                alt="Floa AI Feature 2"
+                className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-2 text-cyan-200 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                Smart Agents
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-xl border border-blue-500/30 bg-black/30">
+              <img
+                src={img3}
+                alt="Floa AI Feature 3"
+                className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-2 text-blue-200 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                Ecosystem
+              </div>
+            </div>
           </div>
         </div>
 

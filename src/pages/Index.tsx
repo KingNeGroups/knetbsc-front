@@ -8,6 +8,8 @@ import { ProjectInfo } from "@/components/ProjectInfo";
 import { toast } from "sonner";
 import { LogOut, Sparkles, ExternalLink } from "lucide-react";
 import logo from "@/assets/logo.png";
+import banner from "@/assets/img/floa/banner.png";
+import solgenLogo from "@/assets/img/floa/solgen+logo.png";
 import { Partners } from "@/components/Partners";
 import { Footer } from "@/components/Footer";
 
@@ -144,8 +146,12 @@ const Index = () => {
         <div className="max-w-7xl mx-auto space-y-20">
           {/* Revolutionary Hero Section */}
           <div className="text-center space-y-8 animate-slide-in relative">
-            {/* Holographic background effect */}
+            {/* Holographic background effect with banner */}
             <div className="absolute inset-0 -m-20">
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 rounded-3xl"
+                style={{ backgroundImage: `url(${banner})` }}
+              />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/10 to-cyan-600/20 rounded-3xl blur-3xl animate-pulse" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-50" />
             </div>
@@ -246,6 +252,30 @@ const Index = () => {
               <div className="absolute -inset-8 bg-gradient-to-bl from-purple-900/10 to-cyan-900/10 rounded-3xl blur-2xl" />
               <div className="relative">
                 <ProjectInfo />
+              </div>
+            </div>
+          </div>
+
+          {/* Featured Showcase Section */}
+          <div className="relative animate-slide-in" style={{ animationDelay: "0.6s" }}>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-cyan-900/20 rounded-3xl blur-2xl" />
+            <div className="relative border border-blue-500/30 rounded-3xl p-12 backdrop-blur-xl bg-black/40">
+              <div className="text-center space-y-8">
+                <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-900/40 to-purple-900/40 rounded-full border border-blue-500/30 backdrop-blur-sm text-blue-300 text-sm font-medium">
+                  <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse" />
+                  <span className="uppercase tracking-wider">Featured Assets</span>
+                  <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse" />
+                </div>
+
+                <h2 className="text-4xl lg:text-5xl font-bold">
+                  <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                    Explore Our Ecosystem
+                  </span>
+                </h2>
+
+                <p className="max-w-3xl mx-auto text-xl text-gray-300 leading-relaxed">
+                  Discover the visual essence of Floa AI ecosystem through our curated collection of assets
+                </p>
               </div>
             </div>
           </div>
