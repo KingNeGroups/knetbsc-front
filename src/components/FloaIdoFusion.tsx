@@ -420,7 +420,7 @@ export function FloaIdoFusion() {
                     </div>
                   </div>
 
-                  <div className="group relative">
+                  {/* <div className="group relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/15 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="relative flex justify-between items-center p-4 bg-black/30 rounded-2xl border border-cyan-500/30 backdrop-blur-sm">
                       <span className="text-gray-400 font-medium">Receiving Address:</span>
@@ -439,7 +439,7 @@ export function FloaIdoFusion() {
                         </button>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
