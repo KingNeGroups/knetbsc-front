@@ -33,7 +33,7 @@ export function IdoStats() {
   const { address } = useAccount();
   const [userContribution, setUserContribution] = useState("0");
   const [totalRaised, setTotalRaised] = useState("0");
-  const [targetAmount, setTargetAmount] = useState(0);
+  const [targetAmount, setTargetAmount] = useState(11916033);
   const [decimals, setDecimals] = useState(18);
 
   const [progress, setProgress] = useState(0);
@@ -103,12 +103,13 @@ export function IdoStats() {
         setKnetData(prev => ({ ...prev, loading: true }));
         const data = await calculateKnetForTargetUsdt();
         setKnetData({
-          amount: data.knetAmount,
+          // amount: data.knetAmount,
+          amount: targetAmount,
           price: data.price,
           targetUsdt: data.targetUsdt,
           loading: false
         });
-        setTargetAmount(data.knetAmount)
+        // setTargetAmount(data.knetAmount)
       } catch (error) {
         console.error('Failed to fetch KNET data:', error);
         setKnetData(prev => ({ ...prev, loading: false }));
@@ -161,12 +162,12 @@ export function IdoStats() {
         <div className="relative z-10">
           <div className="flex items-center justify-between mb-4">
             <div className="text-muted-foreground text-sm font-medium"> 30,000 USDT Equivalent</div>
-            {knetData.loading && (
+            {/* {knetData.loading && (
               <div className="flex items-center gap-1">
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                 <span className="text-xs text-primary">Updating...</span>
               </div>
-            )}
+            )} */}
           </div>
 
           <div className="flex items-baseline gap-3 mb-3">
@@ -181,12 +182,12 @@ export function IdoStats() {
           </div>
 
           <div className="flex items-center justify-between text-xs">
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <span className="text-muted-foreground">Price:</span>
               <span className="font-mono font-bold text-primary">
                 ${knetData.price ? knetData.price.toFixed(8) : '0.00000000'}
               </span>
-            </div>
+            </div> */}
             {/* <div className="px-2 py-1 bg-primary/10 rounded-full text-xs font-medium text-primary">
               Live Update
             </div> */}
