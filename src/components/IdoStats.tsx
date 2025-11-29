@@ -123,18 +123,30 @@ export function IdoStats({ targetAmount }: IdoStatsProps) {
   }, []);
 
   return (
-    <div className="grid gap-4 grid-cols-1 md:grid-cols-3 xl:grid-cols-4 animate-slide-in" style={{ animationDelay: "0.2s" }}>
-      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all md:col-span-1 xl:col-span-1">
-        <div className="text-muted-foreground text-sm mb-2">Your Contribution</div>
-        <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-          {userContribution} KNET
+    <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 animate-slide-in" style={{ animationDelay: "0.2s" }}>
+      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all group relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-primary opacity-10 rounded-full blur-xl group-hover:opacity-20 transition-opacity" />
+        <div className="relative z-10">
+          <div className="text-muted-foreground text-xs uppercase tracking-wider mb-3 opacity-70">Your Contribution</div>
+          <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:scale-105 transition-transform">
+            {userContribution} <span className="text-lg font-medium text-primary/80">KNET</span>
+          </div>
+          <div className="mt-2 text-xs text-primary/60">
+            {userContribution && parseFloat(userContribution) > 0 ? "Active Contributor" : "Not Started"}
+          </div>
         </div>
       </Card>
 
-      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all md:col-span-1 xl:col-span-1">
-        <div className="text-muted-foreground text-sm mb-2">Total Raised</div>
-        <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-          {totalRaised} KNET
+      <Card className="glass-card p-6 border-primary/20 hover:border-primary/40 transition-all group relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-secondary opacity-10 rounded-full blur-xl group-hover:opacity-20 transition-opacity" />
+        <div className="relative z-10">
+          <div className="text-muted-foreground text-xs uppercase tracking-wider mb-3 opacity-70">Total Raised</div>
+          <div className="text-3xl font-bold bg-gradient-secondary bg-clip-text text-transparent group-hover:scale-105 transition-transform">
+            {totalRaised} <span className="text-lg font-medium text-secondary/80">KNET</span>
+          </div>
+          <div className="mt-2 text-xs text-secondary/60">
+            {totalRaised && parseFloat(totalRaised) > 0 ? `${progress.toFixed(1)}% Complete` : "Not Started"}
+          </div>
         </div>
       </Card>
 

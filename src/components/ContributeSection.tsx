@@ -144,15 +144,29 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
   };
 
   return (
-    <Card className="glass-card p-8 border-primary/20 animate-slide-in" style={{ animationDelay: "0.1s" }}>
-      <div className="space-y-6">
-        <div>
-          <h2 className="text-2xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">
-            Contribute to IDO
+    <Card className="glass-card p-8 border-primary/30 animate-slide-in relative overflow-hidden group" style={{ animationDelay: "0.1s" }}>
+      {/* Background accent */}
+      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-primary opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity duration-500" />
+
+      {/* Top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+
+      <div className="relative z-10 space-y-6">
+        <div className="text-center space-y-3">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full border border-primary/20 text-primary text-sm font-medium mx-auto">
+            <span>Join KingNet AI IDO</span>
+          </div>
+          <h2 className="text-3xl font-bold">
+            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              Join the Intelligent Revolution
+            </span>
           </h2>
-          <p className="text-muted-foreground text-sm">
-            Send KNET tokens to participate in the Floa IDO
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            Send KNET tokens to participate in Floa IDO and become a core member of KingNet AI ecosystem
           </p>
+          <div className="mt-3 inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-xs text-primary font-medium">
+            <span>🚀 KNET Token Ecosystem</span>
+          </div>
         </div>
 
         <div className="space-y-4">
