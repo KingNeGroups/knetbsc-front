@@ -74,18 +74,17 @@ export const Partners = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" /> */}
+    <section className="relative overflow-hidden">
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-6 md:mb-8 animate-slide-in">
+        {/* <div className="text-center mb-6 md:mb-8 animate-slide-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-primary">
            Ecosystem Partners
           </h2>
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
             Building the Web3 ecosystem together with industry leaders
           </p>
-        </div>
+        </div> */}
 
         <div className="relative">
           {/* Infinite Scroll Animation Container */}

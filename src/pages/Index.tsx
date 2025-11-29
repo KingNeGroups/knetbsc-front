@@ -261,28 +261,23 @@ const Index = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-cyan-900/20 rounded-3xl blur-2xl" />
             <div className="relative border border-blue-500/30 rounded-3xl p-12 backdrop-blur-xl bg-black/40">
               <div className="text-center space-y-8">
-                <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-900/40 to-purple-900/40 rounded-full border border-blue-500/30 backdrop-blur-sm text-blue-300 text-sm font-medium">
-                  <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse" />
-                  <span className="uppercase tracking-wider">Featured Assets</span>
-                  <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse" />
-                </div>
+               
 
                 <h2 className="text-4xl lg:text-5xl font-bold">
                   <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(59,130,246,0.3)]">
-                    Explore Our Ecosystem
+                   Ecosystem Partners
                   </span>
                 </h2>
 
-                <p className="max-w-3xl mx-auto text-xl text-gray-300 leading-relaxed">
-                  Discover the visual essence of Floa AI ecosystem through our curated collection of assets
-                </p>
+              
+                 <Partners/>
               </div>
             </div>
           </div>
         </div>
       </main>
       {/* Partners */}
-      <Partners/>
+     
       {/* Footer */}
       {/* <footer className="relative z-10 border-t border-border/50 mt-20">
         <div className="container mx-auto px-4 py-8">
