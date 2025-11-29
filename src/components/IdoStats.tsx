@@ -245,7 +245,7 @@ export function IdoStats() {
        
       <div className="col-span-1 md:col-span-2">
       {/* 倒计时组件 */}
-      <Countdown targetDate={targetDate} title="IDO Ends In" />
+      <Countdown targetDate={targetDate} title="Countdown" />
       </div>
 
     </div>

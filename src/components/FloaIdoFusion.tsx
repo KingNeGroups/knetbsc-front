@@ -399,58 +399,6 @@ export function FloaIdoFusion() {
 
           <Card className="relative bg-black/40 backdrop-blur-2xl border border-blue-500/30 rounded-[3rem_4rem_2rem_4rem] p-8">
             <div className="grid lg:grid-cols-2 gap-8">
-              {/* Contract Info */}
-              <div className="space-y-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(139,92,246,0.6)]" />
-                  <h4 className="text-xl font-bold text-purple-300 uppercase tracking-wider">Address</h4>
-                  <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
-                </div>
-
-                <div className="space-y-4">
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/15 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative flex justify-between items-center p-4 bg-black/30 rounded-2xl border border-purple-500/30 backdrop-blur-sm">
-                      <span className="text-gray-400 font-medium">$KNET:</span>
-                      <div className="flex items-center gap-3">
-                        <span className="text-purple-300 font-mono bg-black/50 px-3 py-2 rounded-xl">0x8b24...7a46</span>
-                        <button
-                          onClick={handleCopyTokenContract}
-                          className="p-2.5 hover:bg-purple-800/30 rounded-xl transition-all duration-300 group/copy"
-                          title="Copy token contract address"
-                        >
-                          {copiedTokenContract ? (
-                            <CopyCheck className="w-4 h-4 text-green-400" />
-                          ) : (
-                            <Copy className="w-4 h-4 text-gray-400 group-hover/copy:text-purple-300 transition-colors" />
-                          )}
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* <div className="group relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/15 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative flex justify-between items-center p-4 bg-black/30 rounded-2xl border border-cyan-500/30 backdrop-blur-sm">
-                      <span className="text-gray-400 font-medium">Receiving Address:</span>
-                      <div className="flex items-center gap-3">
-                        <span className="text-cyan-300 font-mono bg-black/50 px-3 py-2 rounded-xl">0xf0B4...5Dc</span>
-                        <button
-                          onClick={handleCopyReceivingAddress}
-                          className="p-2.5 hover:bg-cyan-800/30 rounded-xl transition-all duration-300 group/copy"
-                          title="Copy receiving address"
-                        >
-                          {copiedReceivingAddress ? (
-                            <CopyCheck className="w-4 h-4 text-green-400" />
-                          ) : (
-                            <Copy className="w-4 h-4 text-gray-400 group-hover/copy:text-cyan-300 transition-colors" />
-                          )}
-                        </button>
-                      </div>
-                    </div>
-                  </div> */}
-                </div>
-              </div>
 
               {/* Links Section */}
               <div className="space-y-6">
