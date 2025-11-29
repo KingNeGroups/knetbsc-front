@@ -4,7 +4,7 @@ import { bsc } from '@reown/appkit/networks'
 import { QueryClient } from '@tanstack/react-query'
 
 // 1. Get projectId from https://cloud.reown.com
-export const projectId = 'YOUR_PROJECT_ID'
+export const projectId = 'fa5a2ed6c0ea60a7f5c9e3a28c4981b9'
 
 if (!projectId) {
   throw new Error('Project ID is not defined')

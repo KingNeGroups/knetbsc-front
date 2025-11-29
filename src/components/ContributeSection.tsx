@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -46,82 +47,65 @@ const ERC20_ABI = [
 export function ContributeSection({ onContribute }: ContributeSectionProps) {
   const [amount, setAmount] = useState("");
   const [hasNotified, setHasNotified] = useState(false);
+
   const { address, isConnected } = useAccount();
   const { open } = useAppKit();
 
-  // Get BNB balance
-  const { data: bnbBalance } = useBalance({
-    address: address,
-  });
+  // 获取 BNB balance
+  const { data: bnbBalance } = useBalance({ address });
 
-  // Get KNET balance
-  const { data: knetBalance } = useReadContract({
+  // 获取 KNET balance
+  const { data: knetBalance, refetch: refetchKnetBalance } = useReadContract({
     address: KNET_TOKEN_ADDRESS,
     abi: ERC20_ABI,
     functionName: "balanceOf",
     args: address ? [address] : undefined,
+    watch: true, // 自动监听更新
   });
 
-  // Get KNET decimals
+  // 获取 KNET decimals
   const { data: knetDecimals } = useReadContract({
     address: KNET_TOKEN_ADDRESS,
     abi: ERC20_ABI,
     functionName: "decimals",
   });
 
-  // Write contract for KNET transfer
-  const { writeContract, data: hash, isPending } = useWriteContract();
+  // 写入合约
+  const { writeContract, data: txHash, isPending } = useWriteContract();
 
-  // Wait for transaction confirmation
-  const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({
-    hash,
-  });
+  // 等待交易确认
+  const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash: txHash });
 
-  // Handle transaction success
+  // 成功通知
   useEffect(() => {
-    if (isSuccess && hash && !hasNotified) {
+    if (isSuccess && txHash && !hasNotified) {
       toast.success(`Successfully contributed ${amount} KNET!`, {
-        description: `Transaction: ${hash.slice(0, 10)}...${hash.slice(-8)}`,
+        description: `Tx: ${txHash.slice(0, 10)}...${txHash.slice(-8)}`,
       });
       onContribute(amount);
       setAmount("");
       setHasNotified(true);
+      refetchKnetBalance?.();
     }
-  }, [isSuccess, hash, amount, onContribute, hasNotified]);
+  }, [isSuccess, txHash, amount, onContribute, hasNotified, refetchKnetBalance]);
 
-  // Reset notification flag when hash changes
+  // hash 改变时重置通知
   useEffect(() => {
-    if (hash) {
-      setHasNotified(false);
-    }
-  }, [hash]);
+    setHasNotified(false);
+  }, [txHash]);
 
   const handleContribute = async () => {
-    if (!amount || parseFloat(amount) <= 0) {
-      toast.error("Please enter a valid amount");
-      return;
-    }
+    if (!amount || parseFloat(amount) <= 0) return toast.error("Please enter a valid amount");
+    if (parseFloat(amount) > 30000) return toast.error("Maximum contribution is 30,000 KNET");
 
-    if (parseFloat(amount) > 30000) {
-      toast.error("Maximum contribution is 30,000 KNET");
-      return;
-    }
+    if (!address) return toast.error("Please connect your wallet");
 
     const decimals = knetDecimals || 18;
-    const balance = knetBalance ? formatUnits(knetBalance as bigint, decimals) : "0";
-    
-    if (!knetBalance || parseFloat(balance) < parseFloat(amount)) {
-      toast.error("Insufficient KNET balance");
-      return;
-    }
+    const balance = knetBalance ? parseFloat(formatUnits(knetBalance as bigint, decimals)) : 0;
 
-    if (!address) {
-      toast.error("Please connect your wallet");
-      return;
-    }
+    if (balance < parseFloat(amount)) return toast.error("Insufficient KNET balance");
 
     try {
-      // ERC20 transfer function
       writeContract({
         account: address,
         chain: bsc,
@@ -130,8 +114,8 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
         functionName: "transfer",
         args: [RECEIVING_ADDRESS, parseUnits(amount, decimals)],
       });
-    } catch (error: any) {
-      toast.error(error?.message || "Transaction failed");
+    } catch (err: any) {
+      toast.error(err?.message || "Transaction failed");
     }
   };
 
@@ -166,9 +150,7 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
           )}
 
           <div>
-            <label className="text-sm text-muted-foreground mb-2 block">
-              Amount (KNET)
-            </label>
+            <label className="text-sm text-muted-foreground mb-2 block">Amount (KNET)</label>
             <Input
               type="number"
               placeholder="Enter amount"
@@ -177,13 +159,11 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
               className="bg-secondary border-border focus:border-primary transition-colors"
               disabled={!isConnected || isPending || isConfirming}
             />
-            <p className="text-xs text-muted-foreground mt-2">
-              Maximum: 30,000 KNET
-            </p>
+            <p className="text-xs text-muted-foreground mt-2">Maximum: 30,000 KNET</p>
           </div>
 
           {isConnected ? (
-            <Button 
+            <Button
               onClick={handleContribute}
               className="w-full bg-gradient-primary hover:shadow-glow-primary transition-all font-semibold"
               size="lg"
@@ -193,7 +173,7 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
               {!isPending && !isConfirming && <ArrowRight className="w-4 h-4 ml-2" />}
             </Button>
           ) : (
-            <Button 
+            <Button
               onClick={() => open()}
               className="w-full bg-gradient-primary hover:shadow-glow-primary transition-all font-semibold"
               size="lg"
