@@ -402,7 +402,7 @@ export function FloaIdoFusion() {
                   <div className="group relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/15 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="relative flex justify-between items-center p-4 bg-black/30 rounded-2xl border border-purple-500/30 backdrop-blur-sm">
-                      <span className="text-gray-400 font-medium">Token Contract:</span>
+                      <span className="text-gray-400 font-medium">KNET:</span>
                       <div className="flex items-center gap-3">
                         <span className="text-purple-300 font-mono bg-black/50 px-3 py-2 rounded-xl">0x8b24...7a46</span>
                         <button
@@ -459,7 +459,7 @@ export function FloaIdoFusion() {
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <Globe className="w-4 h-4 mr-2 relative z-10" />
-                    <span className="relative z-10">Official Website</span>
+                    <span className="relative z-10">Website</span>
                     <ExternalLink className="w-3 h-3 ml-2 relative z-10 group-hover:translate-x-0.5 transition-transform duration-300" />
                   </Button>
 
@@ -481,7 +481,7 @@ export function FloaIdoFusion() {
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <BookOpen className="w-4 h-4 mr-2 relative z-10" />
-                    <span className="relative z-10">Documentation</span>
+                    <span className="relative z-10">Docs</span>
                     <ExternalLink className="w-3 h-3 ml-2 relative z-10 group-hover:translate-x-0.5 transition-transform duration-300" />
                   </Button>
                 </div>
