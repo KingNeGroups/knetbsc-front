@@ -56,7 +56,7 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
 
   const handleContribute = async () => {
     if (!amount || parseFloat(amount) <= 0) return toast.error("Please enter a valid amount");
-    if (parseFloat(amount) > 30000) return toast.error("Maximum contribution is 30,000 KNET");
+    // if (parseFloat(amount) > 30000) return toast.error("Maximum contribution is 30,000 KNET");
 
     if (!address) return toast.error("Please connect your wallet");
 
@@ -103,7 +103,7 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
 
   const handleMaxAmount = () => {
     if (formattedKnetBalance > 0) {
-      const maxAllowed = Math.min(formattedKnetBalance, 30000); // 不超过30,000 KNET的限制
+      const maxAllowed =formattedKnetBalance; // 不超过30,000 KNET的限制
       setAmount(maxAllowed.toString());
     }
   };
