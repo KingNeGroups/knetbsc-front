@@ -77,7 +77,8 @@ export function IdoStats() {
       setTotalRaised(total.toFixed(2));
       const target = parseFloat(targetAmount.toString());
       const percentage = target > 0 ? (total / target) * 100 : 0;
-      setProgress(Math.min(percentage, 100));
+      // setProgress(Math.min(percentage, 100));
+      setProgress(percentage);
     }
 
     if (userKnet && totalKnet) {
@@ -91,8 +92,9 @@ export function IdoStats() {
   useEffect(() => {
     const raised = parseFloat(totalRaised);
     const target = parseFloat(targetAmount.toString());
-    const percentage = (raised / target) * 100;
-    setProgress(Math.min(percentage, 100));
+    const percentage = target> 0 ?(raised / target) * 100 : 0;
+    // setProgress(Math.min(percentage, 100));
+    setProgress(percentage);
   }, [totalRaised, targetAmount]);
 
   useEffect(() => {
