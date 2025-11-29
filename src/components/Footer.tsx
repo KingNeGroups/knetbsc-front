@@ -38,7 +38,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="relative border-t border-border/30 bg-gradient-to-br from-background via-background to-muted/10 mt-20 overflow-hidden">
+    <footer className="relative border-t border-border/30 bg-gradient-to-br from-background via-background to-muted/10  overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 bg-gradient-primary opacity-5" />
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" />
