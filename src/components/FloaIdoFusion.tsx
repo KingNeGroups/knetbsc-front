@@ -166,11 +166,109 @@ export function FloaIdoFusion() {
         {/* Main Content Grid - Organic Asymmetric Layout */}
         <div className="grid lg:grid-cols-12 gap-8 items-start relative">
           {/* Contribute Section - Left Column - Irregular Shape */}
-          <div className="lg:col-span-5 transform lg:-rotate-1">
+          <div className="lg:col-span-7 transform lg:-rotate-1">
             <div className="relative">
               {/* Organic background blob */}
               <div className="absolute -inset-4 bg-gradient-to-br from-blue-900/30 via-purple-900/20 to-cyan-900/30 backdrop-blur-2xl rounded-[4rem_1rem_3rem_2rem] blur-xl" />
 
+             
+              <Card className="relative bg-black/40 backdrop-blur-2xl border border-purple-500/30 rounded-[3rem_1rem_4rem_1rem] p-8 overflow-hidden">
+                <div className="space-y-6">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                    About Floa
+                    </h3>
+                  </div>
+
+                  {/* Asymmetric image grid */}
+                  <div className="grid grid-cols-3 gap-4 transform rotate-1">
+                    <div className="col-span-2 row-span-1 group relative overflow-hidden rounded-3xl border border-purple-500/40 bg-black/30 hover:scale-[1.03] transition-all duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <img
+                        src={img1}
+                        alt="AI Training"
+                        className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-purple-200 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
+                        <div className="flex items-center justify-center gap-2">
+                          <div className="w-2 h-2 bg-purple-300 rounded-full" />
+                          AI Training
+                          <div className="w-2 h-2 bg-purple-300 rounded-full" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col-span-1 row-span-2 group relative overflow-hidden rounded-3xl border border-cyan-500/40 bg-black/30 hover:scale-[1.03] transition-all duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <img
+                        src={img2}
+                        alt="Smart Agents"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-cyan-200 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
+                        <div className="flex items-center justify-center gap-2">
+                          <div className="w-2 h-2 bg-cyan-300 rounded-full" />
+                          Smart
+                          <br />
+                          Agents
+                          <div className="w-2 h-2 bg-cyan-300 rounded-full" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col-span-1 row-span-1 group relative overflow-hidden rounded-3xl border border-blue-500/40 bg-black/30 hover:scale-[1.03] transition-all duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <img
+                        src={img3}
+                        alt="Ecosystem"
+                        className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-blue-200 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
+                        <div className="flex items-center justify-center gap-2">
+                          <div className="w-2 h-2 bg-blue-300 rounded-full" />
+                          Ecosystem
+                          <div className="w-2 h-2 bg-blue-300 rounded-full" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+            {/* Fair Mechanism Section */}
+            <div className="relative transform -rotate-1">
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-900/40 to-cyan-900/40 backdrop-blur-2xl rounded-[4rem_2rem_3rem_1rem] blur-xl" />
+              <Card className="relative bg-black/40 backdrop-blur-2xl border border-purple-500/40 rounded-[4rem_2rem_3rem_1rem] p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-4 h-4 bg-purple-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
+                  <h3 className="text-2xl font-bold text-purple-300 uppercase tracking-wider">$FLOA Token Generation Event</h3>
+                  <div className="w-4 h-4 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(6,182,212,0.8)]" />
+                </div>
+
+                <div className="relative p-6 bg-black/30 rounded-3xl border border-purple-500/30 backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+                  <p className="text-gray-300 leading-relaxed text-lg relative z-10">
+                    1.Mechanism: Proof-of-Burn Access (PoBA)
+                  </p>
+                  <p>
+                    2.Supply: 
+                    <span className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">1.5% </span> 
+                    of total $FLOA(1,500,000)
+                  </p>
+                  <p>3.Donated $KNET to receive $FLOA tokens. </p>
+                  <p>4.All $KNET collected will be permanently burned after the event.</p>
+                  <p>5.The official $FLOA liquidity pool will be deployed on PancakeSwap following the event conclusion.</p>
+                </div>
+              </Card>
+            </div>
+            </div>
+          </div>
+
+          {/* Content Section - Middle Column - Staggered Layout */}
+          <div className="lg:col-span-5 space-y-8 transform lg:rotate-1">
+            {/* Feature Gallery - Organic Grid */}
+            <div className="relative transform -rotate-1">
+              <div className="absolute -inset-4 bg-gradient-to-br from-purple-900/30 via-cyan-900/20 to-blue-900/30 backdrop-blur-2xl rounded-[3rem_1rem_4rem_1rem] blur-xl" />
               <Card className="relative bg-black/40 backdrop-blur-2xl border border-blue-500/30 rounded-[4rem_1rem_3rem_2rem] p-8 overflow-hidden hover:shadow-[0_0_60px_rgba(59,130,246,0.4)] transition-all duration-700 hover:-translate-y-2">
                 {/* Floating elements */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-purple-600/10 rounded-full blur-2xl animate-pulse" />
@@ -266,103 +364,6 @@ export function FloaIdoFusion() {
                       </div>
                     </Button>
                   )}
-                </div>
-              </Card>
-
-            {/* Fair Mechanism Section */}
-            <div className="relative transform -rotate-1">
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-900/40 to-cyan-900/40 backdrop-blur-2xl rounded-[4rem_2rem_3rem_1rem] blur-xl" />
-              <Card className="relative bg-black/40 backdrop-blur-2xl border border-purple-500/40 rounded-[4rem_2rem_3rem_1rem] p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-4 h-4 bg-purple-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
-                  <h3 className="text-2xl font-bold text-purple-300 uppercase tracking-wider">$FLOA Token Generation Event</h3>
-                  <div className="w-4 h-4 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(6,182,212,0.8)]" />
-                </div>
-
-                <div className="relative p-6 bg-black/30 rounded-3xl border border-purple-500/30 backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                  <p className="text-gray-300 leading-relaxed text-lg relative z-10">
-                    1.Mechanism: Proof-of-Burn Access (PoBA)
-                  </p>
-                  <p>
-                    2.Supply: 
-                    <span className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">1.5% </span> 
-                    of total $FLOA(1,500,000)
-                  </p>
-                  <p>3.Donated $KNET to receive $FLOA tokens. </p>
-                  <p>4.All $KNET collected will be permanently burned after the event.</p>
-                  <p>5.The official $FLOA liquidity pool will be deployed on PancakeSwap following the event conclusion.</p>
-                </div>
-              </Card>
-            </div>
-            </div>
-          </div>
-
-          {/* Content Section - Middle Column - Staggered Layout */}
-          <div className="lg:col-span-7 space-y-8 transform lg:rotate-1">
-            {/* Feature Gallery - Organic Grid */}
-            <div className="relative transform -rotate-1">
-              <div className="absolute -inset-4 bg-gradient-to-br from-purple-900/30 via-cyan-900/20 to-blue-900/30 backdrop-blur-2xl rounded-[3rem_1rem_4rem_1rem] blur-xl" />
-              <Card className="relative bg-black/40 backdrop-blur-2xl border border-purple-500/30 rounded-[3rem_1rem_4rem_1rem] p-8 overflow-hidden">
-                <div className="space-y-6">
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                    About Floa
-                    </h3>
-                  </div>
-
-                  {/* Asymmetric image grid */}
-                  <div className="grid grid-cols-3 gap-4 transform rotate-1">
-                    <div className="col-span-2 row-span-1 group relative overflow-hidden rounded-3xl border border-purple-500/40 bg-black/30 hover:scale-[1.03] transition-all duration-500">
-                      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <img
-                        src={img1}
-                        alt="AI Training"
-                        className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 p-4 text-purple-200 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
-                        <div className="flex items-center justify-center gap-2">
-                          <div className="w-2 h-2 bg-purple-300 rounded-full" />
-                          AI Training
-                          <div className="w-2 h-2 bg-purple-300 rounded-full" />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-span-1 row-span-2 group relative overflow-hidden rounded-3xl border border-cyan-500/40 bg-black/30 hover:scale-[1.03] transition-all duration-500">
-                      <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <img
-                        src={img2}
-                        alt="Smart Agents"
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 p-4 text-cyan-200 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
-                        <div className="flex items-center justify-center gap-2">
-                          <div className="w-2 h-2 bg-cyan-300 rounded-full" />
-                          Smart
-                          <br />
-                          Agents
-                          <div className="w-2 h-2 bg-cyan-300 rounded-full" />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-span-1 row-span-1 group relative overflow-hidden rounded-3xl border border-blue-500/40 bg-black/30 hover:scale-[1.03] transition-all duration-500">
-                      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <img
-                        src={img3}
-                        alt="Ecosystem"
-                        className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 p-4 text-blue-200 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
-                        <div className="flex items-center justify-center gap-2">
-                          <div className="w-2 h-2 bg-blue-300 rounded-full" />
-                          Ecosystem
-                          <div className="w-2 h-2 bg-blue-300 rounded-full" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </Card>
               
