@@ -497,6 +497,470 @@ export function FloaIdoFusion() {
             </div>
           </Card>
         </div>
+        {/* Roadmap Section - Organic Flow Design */}
+        <div className="relative mt-16 mb-16">
+          {/* Flowing organic background */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/10 via-transparent to-blue-500/5 rounded-full filter blur-3xl animate-blob" />
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-tl from-cyan-500/8 via-transparent to-purple-500/4 rounded-full filter blur-2xl animate-blob animation-delay-2000" />
+          </div>
+
+          <div className="relative">
+            {/* Organic section header */}
+            <div className="text-center mb-12 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-transparent to-blue-900/30 rounded-3xl blur-xl transform rotate-1" />
+              <div className="relative">
+                <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-900/60 to-blue-900/60 rounded-full border border-purple-500/40 backdrop-blur-md text-purple-300 font-medium shadow-2xl transform -rotate-1 hover:rotate-0 transition-all duration-500">
+                  <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
+                  <span className="uppercase tracking-[0.3em] font-bold">Roadmap</span>
+                  <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(59,130,246,0.8)]" />
+                </div>
+
+                <div className="flex items-center justify-center gap-8 mt-6">
+                  <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full transform -rotate-2" />
+                  <div className="flex -space-x-2">
+                    <div className="w-4 h-4 bg-purple-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(139,92,246,0.6)]" />
+                    <div className="w-4 h-4 bg-blue-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.6)]" style={{ animationDelay: "0.5s" }} />
+                    <div className="w-4 h-4 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]" style={{ animationDelay: "1s" }} />
+                  </div>
+                  <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transform rotate-1" />
+                </div>
+              </div>
+            </div>
+
+            {/* Roadmap Phases - Organic Layout */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-900/15 via-transparent to-blue-900/10 rounded-3xl blur-xl" />
+              <div className="relative bg-black/20 backdrop-blur-xl rounded-3xl border border-purple-500/20 p-8">
+                <div className="space-y-8">
+                  {/* Phase 1 */}
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative bg-black/30 backdrop-blur-sm rounded-2xl border border-purple-500/30 p-6 transform hover:scale-[1.02] transition-all duration-500">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                          <span className="text-white font-bold text-lg">1</span>
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-3">
+                            <h3 className="text-xl font-bold text-purple-300">Phase 1 (0-6 Months)</h3>
+                            <div className="px-3 py-1 bg-purple-900/40 rounded-full">
+                              <span className="text-purple-300 text-sm font-medium">Basic Ecosystem Construction</span>
+                            </div>
+                          </div>
+                          <ul className="space-y-2 text-gray-300">
+                            <li className="flex items-start gap-2">
+                              <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0" />
+                              <span>Multi-terminal DApp launch</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0" />
+                              <span>Initial liquidity injection</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0" />
+                              <span>Opening of Level 1-6 Agent training functions</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0" />
+                              <span>Launch of the basic Plugin Marketplace</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Phase 2 */}
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative bg-black/30 backdrop-blur-sm rounded-2xl border border-blue-500/30 p-6 transform hover:scale-[1.02] transition-all duration-500">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                          <span className="text-white font-bold text-lg">2</span>
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-3">
+                            <h3 className="text-xl font-bold text-blue-300">Phase 2 (6-18 Months)</h3>
+                            <div className="px-3 py-1 bg-blue-900/40 rounded-full">
+                              <span className="text-blue-300 text-sm font-medium">Ecosystem Collaboration Expansion</span>
+                            </div>
+                          </div>
+                          <ul className="space-y-2 text-gray-300">
+                            <li className="flex items-start gap-2">
+                              <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
+                              <span>Launch of the Developer Incentive Program</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
+                              <span>Integration of vertical applications across multiple fields</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
+                              <span>Launch of the Agent Collaborative Task System</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Phase 3 */}
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative bg-black/30 backdrop-blur-sm rounded-2xl border border-cyan-500/30 p-6 transform hover:scale-[1.02] transition-all duration-500">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center shadow-lg">
+                          <span className="text-white font-bold text-lg">3</span>
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-3">
+                            <h3 className="text-xl font-bold text-cyan-300">Phase 3 (18+ Months)</h3>
+                            <div className="px-3 py-1 bg-cyan-900/40 rounded-full">
+                              <span className="text-cyan-300 text-sm font-medium">Commercial Value Closed Loop</span>
+                            </div>
+                          </div>
+                          <ul className="space-y-2 text-gray-300">
+                            <li className="flex items-start gap-2">
+                              <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                              <span>Launch of DAO Governance Mechanism</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                              <span>Launch of the Commercial Task Matching Platform</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0" />
+                              <span>Realization of full-ecosystem open collaboration</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating connection dots */}
+            <div className="absolute top-1/2 left-8 w-2 h-2 bg-purple-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(139,92,246,0.6)]" />
+            <div className="absolute top-1/3 right-12 w-3 h-3 bg-blue-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.6)]" style={{ animationDelay: "0.7s" }} />
+            <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]" style={{ animationDelay: "1.4s" }} />
+            <div className="absolute bottom-1/3 right-1/4 w-2.5 h-2.5 bg-purple-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(139,92,246,0.6)]" style={{ animationDelay: "2.1s" }} />
+          </div>
+        </div>
+
+        {/* Team Section - Organic Flow Design */}
+        <div className="relative mt-16 mb-16">
+          {/* Flowing organic background */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/5 rounded-full filter blur-3xl animate-blob animation-delay-2000" />
+            <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-gradient-to-tl from-blue-500/8 via-transparent to-cyan-500/4 rounded-full filter blur-2xl animate-blob animation-delay-4000" />
+          </div>
+
+          <div className="relative">
+            {/* Organic section header */}
+            <div className="text-center mb-12 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 via-transparent to-purple-900/30 rounded-3xl blur-xl transform -rotate-1" />
+              <div className="relative">
+                <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-900/60 to-purple-900/60 rounded-full border border-blue-500/40 backdrop-blur-md text-blue-300 font-medium shadow-2xl transform rotate-1 hover:rotate-0 transition-all duration-500">
+                  <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(59,130,246,0.8)]" />
+                  <span className="uppercase tracking-[0.3em] font-bold">Team</span>
+                  <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
+                </div>
+
+                <div className="flex items-center justify-center gap-8 mt-6">
+                  <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transform rotate-2" />
+                  <div className="flex -space-x-2">
+                    <div className="w-4 h-4 bg-blue-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
+                    <div className="w-4 h-4 bg-purple-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(139,92,246,0.6)]" style={{ animationDelay: "0.5s" }} />
+                    <div className="w-4 h-4 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]" style={{ animationDelay: "1s" }} />
+                  </div>
+                  <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full transform -rotate-1" />
+                </div>
+              </div>
+            </div>
+
+            {/* Team Content - Organic Layout */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/15 via-transparent to-purple-900/10 rounded-3xl blur-xl" />
+              <div className="relative bg-black/20 backdrop-blur-xl rounded-3xl border border-blue-500/20 p-8">
+                <div className="max-w-4xl mx-auto">
+                  <div className="text-center mb-8">
+                    <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
+                      About Team
+                    </h3>
+                  </div>
+
+                  <div className="relative bg-black/30 backdrop-blur-sm rounded-2xl border border-blue-500/30 p-8">
+                    <div className="space-y-6 text-lg leading-relaxed">
+                      <p className="text-gray-300 text-center">
+                        Floa is built by a team with experience from
+                      </p>
+
+                      <div className="flex flex-wrap justify-center gap-4 mb-6">
+                        <div className="px-4 py-2 bg-gradient-to-r from-purple-900/40 to-purple-800/40 rounded-full border border-purple-500/30">
+                          <span className="text-purple-300 font-semibold">Google</span>
+                        </div>
+                        <div className="px-4 py-2 bg-gradient-to-r from-cyan-900/40 to-cyan-800/40 rounded-full border border-cyan-500/30">
+                          <span className="text-cyan-300 font-semibold">Tencent</span>
+                        </div>
+                        <div className="px-4 py-2 bg-gradient-to-r from-blue-900/40 to-blue-800/40 rounded-full border border-blue-500/30">
+                          <span className="text-blue-300 font-semibold">ByteDance</span>
+                        </div>
+                        <div className="px-4 py-2 bg-gradient-to-r from-yellow-900/40 to-yellow-800/40 rounded-full border border-yellow-500/30">
+                          <span className="text-yellow-300 font-semibold">BNB Chain</span>
+                        </div>
+                      </div>
+
+                      <p className="text-gray-300 text-center">
+                        We bring together expertise in
+                      </p>
+
+                      <div className="grid md:grid-cols-3 gap-6 mt-6">
+                        <div className="relative group">
+                          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                          <div className="relative bg-black/40 rounded-xl border border-purple-500/30 p-4 text-center">
+                            <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full mx-auto mb-3 flex items-center justify-center">
+                              <span className="text-white text-sm font-bold">AI</span>
+                            </div>
+                            <h4 className="text-purple-300 font-semibold mb-2">AI Development</h4>
+                            <p className="text-gray-400 text-sm">Cutting-edge artificial intelligence and machine learning expertise</p>
+                          </div>
+                        </div>
+
+                        <div className="relative group">
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                          <div className="relative bg-black/40 rounded-xl border border-blue-500/30 p-4 text-center">
+                            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center">
+                              <span className="text-white text-sm font-bold">SE</span>
+                            </div>
+                            <h4 className="text-blue-300 font-semibold mb-2">Scalable Engineering</h4>
+                            <p className="text-gray-400 text-sm">Building robust, scalable product infrastructure</p>
+                          </div>
+                        </div>
+
+                        <div className="relative group">
+                          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                          <div className="relative bg-black/40 rounded-xl border border-cyan-500/30 p-4 text-center">
+                            <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full mx-auto mb-3 flex items-center justify-center">
+                              <span className="text-white text-sm font-bold">W3</span>
+                            </div>
+                            <h4 className="text-cyan-300 font-semibold mb-2">Web3 Protocol</h4>
+                            <p className="text-gray-400 text-sm">Deep knowledge of decentralized systems and blockchain</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mt-8 p-6 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-xl border border-blue-500/20">
+                        <p className="text-gray-300 text-center italic">
+                          "This cross-disciplinary background enables us to create accessible AI applications while building robust decentralized ecosystems."
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating connection dots */}
+            <div className="absolute top-1/4 left-12 w-2.5 h-2.5 bg-blue-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
+            <div className="absolute top-2/3 right-8 w-2 h-2 bg-purple-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(139,92,246,0.6)]" style={{ animationDelay: "0.8s" }} />
+            <div className="absolute bottom-1/3 left-1/4 w-3 h-3 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]" style={{ animationDelay: "1.6s" }} />
+            <div className="absolute bottom-1/2 right-1/3 w-2 h-2 bg-blue-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.6)]" style={{ animationDelay: "2.3s" }} />
+          </div>
+        </div>
+
+        {/* Tokenomics Section - Organic Flow Design */}
+        <div className="relative mt-16 mb-16">
+          {/* Flowing organic background */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-1/4 right-1/3 w-80 h-80 bg-gradient-to-br from-yellow-500/10 via-transparent to-purple-500/5 rounded-full filter blur-3xl animate-blob animation-delay-2000" />
+            <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-gradient-to-tl from-purple-500/8 via-transparent to-yellow-500/4 rounded-full filter blur-2xl animate-blob animation-delay-4000" />
+          </div>
+
+          <div className="relative">
+            {/* Organic section header */}
+            <div className="text-center mb-12 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-900/30 via-transparent to-purple-900/30 rounded-3xl blur-xl transform -rotate-1" />
+              <div className="relative">
+                <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-yellow-900/60 to-purple-900/60 rounded-full border border-yellow-500/40 backdrop-blur-md text-yellow-300 font-medium shadow-2xl transform -rotate-1 hover:rotate-0 transition-all duration-500">
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(250,204,21,0.8)]" />
+                  <span className="uppercase tracking-[0.3em] font-bold">Tokenomics</span>
+                  <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse shadow-[0_0_12px_rgba(139,92,246,0.8)]" />
+                </div>
+
+                <div className="flex items-center justify-center gap-8 mt-6">
+                  <div className="w-24 h-1 bg-gradient-to-r from-yellow-500 to-purple-500 rounded-full transform -rotate-2" />
+                  <div className="flex -space-x-2">
+                    <div className="w-4 h-4 bg-yellow-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(250,204,21,0.6)]" />
+                    <div className="w-4 h-4 bg-purple-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(139,92,246,0.6)]" style={{ animationDelay: "0.5s" }} />
+                    <div className="w-4 h-4 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]" style={{ animationDelay: "1s" }} />
+                  </div>
+                  <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full transform rotate-1" />
+                </div>
+              </div>
+            </div>
+
+            {/* Tokenomics Content - Organic Layout */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/15 via-transparent to-purple-900/10 rounded-3xl blur-xl" />
+              <div className="relative bg-black/20 backdrop-blur-xl rounded-3xl border border-yellow-500/20 p-8">
+                <div className="max-w-6xl mx-auto">
+                  <div className="text-center mb-8">
+                    <h3 className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-purple-400 bg-clip-text text-transparent mb-4">
+                      Token Distribution
+                    </h3>
+                    <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-900/40 to-yellow-900/40 rounded-full border border-purple-500/30">
+                      <span className="text-purple-300 font-medium">Total Supply:</span>
+                      <span className="text-2xl font-bold text-yellow-300">100,000,000</span>
+                    </div>
+                  </div>
+
+                  <div className="grid lg:grid-cols-2 gap-8 items-center">
+                    {/* Pie Chart */}
+                    <div className="relative">
+                      <div className="relative bg-black/30 backdrop-blur-sm rounded-2xl border border-yellow-500/30 p-8">
+                        <div className="relative w-64 h-64 mx-auto">
+                          {/* Simple SVG Pie Chart */}
+                          <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
+                            {/* Train to Earn - 92% */}
+                            <circle
+                              cx="50"
+                              cy="50"
+                              r="40"
+                              fill="none"
+                              stroke="url(#gradient1)"
+                              strokeWidth="20"
+                              strokeDasharray={`${92 * 2.51} ${8 * 2.51}`}
+                              className="drop-shadow-lg"
+                            />
+                            {/* Public Sale - 5% */}
+                            <circle
+                              cx="50"
+                              cy="50"
+                              r="40"
+                              fill="none"
+                              stroke="url(#gradient2)"
+                              strokeWidth="20"
+                              strokeDasharray={`${5 * 2.51} ${95 * 2.51}`}
+                              strokeDashoffset="-${92 * 2.51}"
+                              className="drop-shadow-lg"
+                            />
+                            {/* Liquidity Pools - 3% */}
+                            <circle
+                              cx="50"
+                              cy="50"
+                              r="40"
+                              fill="none"
+                              stroke="url(#gradient3)"
+                              strokeWidth="20"
+                              strokeDasharray={`${3 * 2.51} ${97 * 2.51}`}
+                              strokeDashoffset="-${97 * 2.51}"
+                              className="drop-shadow-lg"
+                            />
+
+                            <defs>
+                              <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#8b5cf6" />
+                                <stop offset="100%" stopColor="#7c3aed" />
+                              </linearGradient>
+                              <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#3b82f6" />
+                                <stop offset="100%" stopColor="#2563eb" />
+                              </linearGradient>
+                              <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="#06b6d4" />
+                                <stop offset="100%" stopColor="#0891b2" />
+                              </linearGradient>
+                            </defs>
+                          </svg>
+
+                          {/* Center text */}
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="text-center">
+                              <div className="text-3xl font-bold text-yellow-300">100M</div>
+                              <div className="text-sm text-gray-400">$FLOA</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Token Details */}
+                    <div className="space-y-4">
+                      {/* Train to Earn */}
+                      <div className="relative group">
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="relative bg-black/30 backdrop-blur-sm rounded-xl border border-purple-500/30 p-4">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <div className="w-4 h-4 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full" />
+                              <div>
+                                <h4 className="text-purple-300 font-semibold">Train to Earn</h4>
+                                <p className="text-gray-400 text-sm">Community rewards & ecosystem incentives</p>
+                              </div>
+                            </div>
+                            <div className="text-right">
+                              <div className="text-2xl font-bold text-purple-300">92%</div>
+                              <div className="text-sm text-gray-400">92,000,000</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Public Sale */}
+                      <div className="relative group">
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="relative bg-black/30 backdrop-blur-sm rounded-xl border border-blue-500/30 p-4">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <div className="w-4 h-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full" />
+                              <div>
+                                <h4 className="text-blue-300 font-semibold">Public Sale</h4>
+                                <p className="text-gray-400 text-sm">Initial token offering & community distribution</p>
+                              </div>
+                            </div>
+                            <div className="text-right">
+                              <div className="text-2xl font-bold text-blue-300">5%</div>
+                              <div className="text-sm text-gray-400">5,000,000</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Liquidity Pools */}
+                      <div className="relative group">
+                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="relative bg-black/30 backdrop-blur-sm rounded-xl border border-cyan-500/30 p-4">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <div className="w-4 h-4 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full" />
+                              <div>
+                                <h4 className="text-cyan-300 font-semibold">Liquidity Pools</h4>
+                                <p className="text-gray-400 text-sm">DEX liquidity & trading stability</p>
+                              </div>
+                            </div>
+                            <div className="text-right">
+                              <div className="text-2xl font-bold text-cyan-300">3%</div>
+                              <div className="text-sm text-gray-400">3,000,000</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating connection dots */}
+            <div className="absolute top-1/3 right-12 w-2.5 h-2.5 bg-yellow-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(250,204,21,0.6)]" />
+            <div className="absolute top-2/3 left-8 w-2 h-2 bg-purple-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(139,92,246,0.6)]" style={{ animationDelay: "0.9s" }} />
+            <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]" style={{ animationDelay: "1.8s" }} />
+            <div className="absolute bottom-1/2 left-1/3 w-2 h-2 bg-yellow-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(250,204,21,0.6)]" style={{ animationDelay: "2.5s" }} />
+          </div>
+        </div>
 
         {/* Ecosystem Partners Showcase - Organic Flow Design */}
         <div className="relative mt-16 mb-16">
