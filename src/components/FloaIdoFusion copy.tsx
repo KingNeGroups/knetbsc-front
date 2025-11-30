@@ -312,7 +312,7 @@ export function FloaIdoFusion() {
 
                     <div className="flex items-center justify-between">
                       <p className="text-gray-400">
-                        balance: <span className="text-blue-400 font-bold">{formattedKnetBalance.toFixed(2)} $KNET</span>
+                        Balance: <span className="text-blue-400 font-bold">{formattedKnetBalance.toFixed(2)} $KNET</span>
                       </p>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
@@ -338,7 +338,7 @@ export function FloaIdoFusion() {
                           </>
                         ) : (
                           <>
-                            <span className="uppercase tracking-wider">Donate</span>
+                            <span className="uppercase tracking-wider">Buy</span>
                             <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
                           </>
                         )}
@@ -384,7 +384,7 @@ export function FloaIdoFusion() {
                     <span className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">1.5% </span> 
                     of total $FLOA(1,500,000)
                   </p>
-                  <p>3.Donated $KNET to receive $FLOA tokens. </p>
+                  <p>3.Transfer $KNET to receive $FLOA tokens. </p>
                   <p>4.All $KNET collected will be permanently burned after the event.</p>
                   <p>5.The official $FLOA liquidity pool will be deployed on PancakeSwap following the event conclusion.</p>
                 </div>
