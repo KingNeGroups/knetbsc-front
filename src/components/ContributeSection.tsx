@@ -228,7 +228,7 @@ export function ContributeSection({ onContribute }: ContributeSectionProps) {
                   </>
                 ) : (
                   <>
-                    <span className="uppercase tracking-wider">Donate</span>
+                    <span className="uppercase tracking-wider">Buy</span>
                     <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
                   </>
                 )}

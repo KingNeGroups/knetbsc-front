@@ -345,7 +345,7 @@ export function FloaIdoFusion() {
 
                     <div className="flex items-center justify-between">
                       <p className="text-gray-400">
-                        balance: <span className="text-blue-400 font-bold">{formattedKnetBalance.toFixed(2)} $KNET</span>
+                        Balance: <span className="text-blue-400 font-bold">{formattedKnetBalance.toFixed(2)} $KNET</span>
                       </p>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
@@ -371,7 +371,7 @@ export function FloaIdoFusion() {
                           </>
                         ) : (
                           <>
-                            <span className="uppercase tracking-wider">Donate</span>
+                            <span className="uppercase tracking-wider">Buy</span>
                             <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
                           </>
                         )}
