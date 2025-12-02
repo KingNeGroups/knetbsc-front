@@ -72,14 +72,14 @@ export function IdoStats() {
   useEffect(() => {
     if (knetDecimals) setDecimals(Number(knetDecimals));
 
-    if (totalKnet) {
-      const total = parseFloat(formatUnits(totalKnet as bigint, knetDecimals || 18));
-      // setTotalRaised(total.toFixed(2));
-      const target = parseFloat(targetAmount.toString());
-      const percentage = target > 0 ? (total / target) * 100 : 0;
-      // setProgress(Math.min(percentage, 100));
-      setProgress(percentage);
-    }
+    // if (totalKnet) {
+    //   const total = parseFloat(formatUnits(totalKnet as bigint, knetDecimals || 18));
+    //   // setTotalRaised(total.toFixed(2));
+    //   const target = parseFloat(targetAmount.toString());
+    //   const percentage = target > 0 ? (total / target) * 100 : 0;
+    //   // setProgress(Math.min(percentage, 100));
+    //   setProgress(percentage);
+    // }
 
     if (userKnet && totalKnet) {
       const userBalance = parseFloat(formatUnits(userKnet as bigint, knetDecimals || 18));
