@@ -377,7 +377,7 @@ export function FloaIdoFusion() {
                       onClick={handleContribute}
                       className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white transition-all duration-500 font-bold text-lg rounded-2xl h-16 hover:scale-[1.03] hover:shadow-2xl hover:shadow-blue-500/30 relative overflow-hidden group"
                       size="lg"
-                      disabled={isPending || isConfirming}
+                      disabled={isPending || isConfirming || true}
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent animate-shimmer" />
@@ -389,7 +389,7 @@ export function FloaIdoFusion() {
                           </>
                         ) : (
                           <>
-                            <span className="uppercase tracking-wider">Buy</span>
+                            <span className="uppercase tracking-wider">Ended</span>
                             <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
                           </>
                         )}
