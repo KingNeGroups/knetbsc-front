@@ -11,7 +11,6 @@ import { bsc } from "@reown/appkit/networks";
 import { useAllBalances, KNET_TOKEN_ADDRESS, ERC20_ABI } from "@/hooks/use-token-balance";
 import { IdoStats } from "./IdoStats";
 import { Partners } from "./Partners";
-import { UserParticipationDisplay } from "./UserParticipationDisplay";
 import img1 from "@/assets/img/floa/1.png";
 import img2 from "@/assets/img/floa/2.jpg";
 import img3 from "@/assets/img/floa/3.png";
@@ -294,8 +293,126 @@ export function FloaIdoFusion() {
 
           {/* Content Section - Middle Column - Staggered Layout */}
           <div className="lg:col-span-5 space-y-8 transform lg:rotate-1">
-            {/* User Participation Display - Organic Grid */}
-            <UserParticipationDisplay />
+            {/* Feature Gallery - Organic Grid */}
+            <div className="relative transform -rotate-1">
+              <div className="absolute -inset-4 bg-gradient-to-br from-purple-900/30 via-cyan-900/20 to-blue-900/30 backdrop-blur-2xl rounded-[3rem_1rem_4rem_1rem] blur-xl" />
+              <Card className="relative bg-black/40 backdrop-blur-2xl border border-blue-500/30 rounded-[4rem_1rem_3rem_2rem] p-8 overflow-hidden hover:shadow-[0_0_60px_rgba(59,130,246,0.4)] transition-all duration-700 hover:-translate-y-2">
+                {/* Floating elements */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-purple-600/10 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-cyan-500/15 to-blue-600/10 rounded-full blur-xl" />
+
+                <div className="relative z-10 space-y-6">
+                  <div className="text-center">
+                    <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-900/50 to-purple-900/50 rounded-full border border-blue-500/40 backdrop-blur-md text-blue-300 font-medium shadow-lg">
+                      <Wallet className="w-4 h-4" />
+                      <span className="uppercase tracking-[0.2em] font-semibold">Join</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <label className="block text-sm font-medium text-gray-300 uppercase tracking-wider">
+                      <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        Amount
+                      </span>
+                    </label>
+
+                    <div className="relative">
+                      <Input
+                        type="number"
+                        placeholder="amount"
+                        value={amount}
+                        onChange={(e) => setAmount(e.target.value)}
+                        className="bg-gradient-to-r from-blue-950/60 to-purple-950/60 border-blue-500/40 focus:border-blue-400 text-gray-200 placeholder-gray-500 transition-all duration-500 rounded-2xl h-16 text-base backdrop-blur-sm pr-28 shadow-inner"
+                        disabled={!isConnected || isPending || isConfirming}
+                      />
+
+                      <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                        <div className="flex items-center gap-1">
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse shadow-[0_0_6px_rgba(59,130,246,0.8)]" />
+                          <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse shadow-[0_0_6px_rgba(139,92,246,0.8)]" style={{ animationDelay: "0.5s" }} />
+                          <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_6px_rgba(6,182,212,0.8)]" style={{ animationDelay: "1s" }} />
+                        </div>
+                        <button
+                          onClick={handleMaxAmount}
+                          disabled={!isConnected || !knetBalance || isPending || isConfirming}
+                          className="px-4 py-2 bg-gradient-to-r from-blue-600/70 to-purple-600/70 hover:from-blue-500/80 hover:to-purple-500/80 disabled:from-gray-600/50 disabled:to-gray-600/50 text-blue-300 disabled:text-gray-500 text-sm font-bold rounded-xl transition-all duration-300 uppercase tracking-wider border border-blue-500/40 disabled:border-gray-500/40 shadow-xl"
+                          title="Set maximum amount"
+                        >
+                          MAX
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between">
+                      <p className="text-gray-400">
+                        Balance: <span className="text-blue-400 font-bold">{formattedKnetBalance.toFixed(2)} $KNET</span>
+                      </p>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
+                        <span className="text-green-400 text-xs font-medium uppercase tracking-wider"></span>
+                      </div>
+                    </div>
+
+                    {/* FLOA Calculation Display */}
+                    {amount && parseFloat(amount) > 0 && (
+                      <div className="mt-3 p-3 bg-gradient-to-r from-purple-900/20 to-blue-900/20 rounded-xl border border-purple-500/20 backdrop-blur-sm">
+                        <div className="flex items-center justify-between">
+                          <span className="text-gray-400 text-sm">Receive:</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-purple-300 font-bold text-lg">
+                              {(parseFloat(amount) * 0.12588).toFixed(4)}
+                            </span>
+                            <span className="text-purple-400 text-sm font-medium">$FLOA</span>
+                          </div>
+                        </div>
+                        <div className="text-xs text-gray-500 mt-1 text-center">
+                          Ratio: 1 KNET = 0.12588 FLOA
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {isConnected ? (
+                    <Button
+                      onClick={handleContribute}
+                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white transition-all duration-500 font-bold text-lg rounded-2xl h-16 hover:scale-[1.03] hover:shadow-2xl hover:shadow-blue-500/30 relative overflow-hidden group"
+                      size="lg"
+                      disabled={isPending || isConfirming || true}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent animate-shimmer" />
+                      <div className="relative flex items-center justify-center">
+                        {isPending || isConfirming ? (
+                          <>
+                            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-3" />
+                            <span>Processing...</span>
+                          </>
+                        ) : (
+                          <>
+                            <span className="uppercase tracking-wider">Ended</span>
+                            <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
+                          </>
+                        )}
+                      </div>
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={() => open()}
+                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white transition-all duration-500 font-bold text-lg rounded-2xl h-16 hover:scale-[1.03] hover:shadow-2xl hover:shadow-blue-500/30 relative overflow-hidden group"
+                      size="lg"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent animate-shimmer" />
+                      <div className="relative flex items-center justify-center">
+                        <Wallet className="w-5 h-5 mr-3" />
+                        <span className="uppercase tracking-wider">Connect Wallet</span>
+                      </div>
+                    </Button>
+                  )}
+                </div>
+              </Card>
+              
+            </div>
 
             {/* Description Section */}
             <div className="relative transform rotate-1">
