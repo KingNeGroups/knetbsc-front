@@ -162,7 +162,7 @@ export function UserParticipationDisplay() {
               </div>
               <div className="text-center p-4 bg-black/30 rounded-xl border border-purple-500/30">
                 <div className="text-2xl font-bold text-purple-300">{userParticipation.floaAmountFormatted}</div>
-                <div className="text-sm text-gray-400">$FLOA Rewards</div>
+                <div className="text-sm text-gray-400">$FLOA Distributed</div>
               </div>
             </div>
 
