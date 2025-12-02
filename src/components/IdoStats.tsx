@@ -32,7 +32,7 @@ const ERC20_ABI = [
 export function IdoStats() {
   const { address } = useAccount();
   const [userContribution, setUserContribution] = useState("0");
-  const [totalRaised, setTotalRaised] = useState("0");
+  const [totalRaised, setTotalRaised] = useState("83137443.56");
   const [targetAmount, setTargetAmount] = useState(11916033);
   const [decimals, setDecimals] = useState(18);
 
@@ -74,7 +74,7 @@ export function IdoStats() {
 
     if (totalKnet) {
       const total = parseFloat(formatUnits(totalKnet as bigint, knetDecimals || 18));
-      setTotalRaised(total.toFixed(2));
+      // setTotalRaised(total.toFixed(2));
       const target = parseFloat(targetAmount.toString());
       const percentage = target > 0 ? (total / target) * 100 : 0;
       // setProgress(Math.min(percentage, 100));
@@ -147,7 +147,7 @@ export function IdoStats() {
         <div className="relative z-10">
           <div className="text-muted-foreground text-xs uppercase tracking-wider mb-3 opacity-70">Total</div>
           <div className="text-3xl font-bold bg-gradient-secondary bg-clip-text text-transparent group-hover:scale-105 transition-transform">
-            {totalRaised}
+            {formatNumber(Number(totalRaised), 2)}
              <span className="text-lg font-medium text-secondary/80"> KNET</span>
           </div>
           <div className="mt-2 text-xs text-secondary/60">
@@ -221,7 +221,7 @@ export function IdoStats() {
             </div>
             <div className="flex items-center gap-3">
               <span className="text-sm text-muted-foreground">
-                {totalRaised} / {formatNumber(knetData.amount, 0)} KNET
+                {totalRaised} / {knetData.amount} KNET
               </span>
               <span className="text-lg font-bold bg-gradient-primary bg-clip-text text-transparent">
                 {progress.toFixed(4)}%
